@@ -6,7 +6,7 @@
 - [Über …](/)
 - [Ingenieure](/ingenieure)
 - [Technologien](/technologien)
-- [Impressum](impressum)
-- [Rechtliche Hinweise](rechtliche_hinweise)
+- [Impressum](/impressum)
+- [Rechtliche Hinweise](/rechtliche_hinweise)
 
 ---
