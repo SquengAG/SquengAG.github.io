@@ -1,0 +1,3 @@
+# Über …
+
+Die Squeng AG ist ein Ingenieurbüro für Informatik und erbringt Ausbildungs-, Beratungs-, Entwicklungs- und Forschungsdienstleistungen.
