@@ -3,10 +3,10 @@
 ---
 
 - [Blog](https://squeng.wordpress.com/)
-- [Über …](index.md)
-- [Ingenieure](ingenieure.md)
-- [Technologien](technologien.md)
-- [Impressum](impressum.md)
-- [Rechtliche Hinweise](rechtliche_hinweise.md)
+- [Über …](/)
+- [Ingenieure](/ingenieure)
+- [Technologien](/technologien)
+- [Impressum](impressum)
+- [Rechtliche Hinweise](rechtliche_hinweise)
 
 ---
