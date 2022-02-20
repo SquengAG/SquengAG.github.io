@@ -17,6 +17,14 @@ description: building the right thing right
 
 ---
 
-## Über …
+## Impressum
 
-Die Squeng AG ist ein Ingenieurbüro für Informatik und erbringt Ausbildungs-, Beratungs-, Entwicklungs- und Forschungsdienstleistungen.
+Squeng AG
+Lagerstrasse 4
+9200 Gossau
+
+UID: CHE-383.211.903
+
+MWST-Nr.: CHE-383.211.903 MWST
+
+www.squeng.com basiert auf [GitHub Pages](https://pages.github.com/)

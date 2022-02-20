@@ -17,6 +17,10 @@ description: building the right thing right
 
 ---
 
-## Über …
+## Rechtliche Hinweise
 
-Die Squeng AG ist ein Ingenieurbüro für Informatik und erbringt Ausbildungs-, Beratungs-, Entwicklungs- und Forschungsdienstleistungen.
+### Datenschutzerklärung
+
+Die Squeng AG hält sich an das Bundesgesetz über den Datenschutz (DSG).
+
+www.squeng.com basiert auf [GitHub Pages](https://pages.github.com/): [GitHub-Politiken](https://docs.github.com/en/github/site-policy)
