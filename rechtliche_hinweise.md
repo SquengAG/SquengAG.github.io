@@ -8,7 +8,7 @@ description: building the right thing right
 
 ---
 
-- [Blog](https://io.squeng.com/)
+- [Blog](https://squeng.wordpress.com/)
 - [Über …](index.md)
 - [Ingenieure](ingenieure.md)
 - [Technologien](technologien.md)

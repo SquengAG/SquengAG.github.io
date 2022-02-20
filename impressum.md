@@ -8,7 +8,7 @@ description: building the right thing right
 
 ---
 
-- [Blog](https://io.squeng.com/)
+- [Blog](https://squeng.wordpress.com/)
 - [Über …](index.md)
 - [Ingenieure](ingenieure.md)
 - [Technologien](technologien.md)
@@ -19,8 +19,8 @@ description: building the right thing right
 
 ## Impressum
 
-Squeng AG
-Lagerstrasse 4
+Squeng AG\
+Lagerstrasse 4\
 9200 Gossau
 
 UID: CHE-383.211.903
