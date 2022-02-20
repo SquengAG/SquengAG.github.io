@@ -4,6 +4,15 @@ title: Squeng AG
 description: building the right thing right
 ---
 
+![Squeng AG's logo](SquengL.png)
+
+---
+
+- [Blog](https://io.squeng.com/)
+- [Über …](index.md)
+- [Ingenieure](ingenieure.md)
+
+---
 
 ## Ingenieure
 
