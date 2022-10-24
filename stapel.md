@@ -10,6 +10,8 @@ description: building the right thing right
 
 Die folgenden Fachbücher habe [ich](/ingenieure) seit Mitte 2022 gelesen.
 
+🤔: [Modern Software Engineering](/modern_software_engineering)
+
 👍👍 oder wenigstens 👍:
 
 - [Product Management in Practice](https://www.oreilly.com/library/view/product-management-in/9781098119720/)
