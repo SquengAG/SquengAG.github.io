@@ -14,4 +14,6 @@ I agree with pretty much all the guidelines, practices, etc. that he promotes (t
 
 To make a long story short: work through the book and be self-confident enough to filter the few 👎 parts while adopting the many 👍 parts in order to build better softare faster. Then it will have been worth the author's time to have written the book and your time to have read it.
 
+### Extract
+
 ![Ports & Adapters](SoLongMVC.png)

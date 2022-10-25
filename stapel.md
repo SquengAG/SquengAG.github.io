@@ -26,4 +26,5 @@ Die folgenden Fachbücher habe [ich](/ingenieure) seit Mitte 2022 gelesen.
 
 👎 oder gar 👎👎:
 
+- [Learning Domain-Driven Design](https://www.oreilly.com/library/view/learning-domain-driven-design/9781098100124/)
 - [API Design Patterns](https://www.manning.com/books/api-design-patterns)
