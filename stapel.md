@@ -14,6 +14,7 @@ Die folgenden Fachbücher habe [ich](/ingenieure) seit Mitte 2022 gelesen.
 
 👍👍 oder wenigstens 👍:
 
+- [The Road to React](https://leanpub.com/the-road-to-learn-react)
 - [Product Management in Practice](https://www.oreilly.com/library/view/product-management-in/9781098119720/)
 - [Learning Functional Programming](https://www.oreilly.com/library/view/learning-functional-programming/9781098111748/)
 - [Startup CXO](https://www.wiley.com/en-us/Startup+CXO%3A+A+Field+Guide+to+Scaling+Up+Your+Company%27s+Critical+Functions+and+Teams-p-9781119774068)
@@ -26,5 +27,6 @@ Die folgenden Fachbücher habe [ich](/ingenieure) seit Mitte 2022 gelesen.
 
 👎 oder gar 👎👎:
 
+- [Learn Functional Programming Without Fear](https://alvinalexander.gumroad.com/l/learnfp)
 - [Learning Domain-Driven Design](https://www.oreilly.com/library/view/learning-domain-driven-design/9781098100124/)
 - [API Design Patterns](https://www.manning.com/books/api-design-patterns)
