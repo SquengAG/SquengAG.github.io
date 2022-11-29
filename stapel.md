@@ -14,6 +14,7 @@ Die folgenden Fachbücher habe [ich](/ingenieure) seit Mitte 2022 gelesen.
 
 👍👍 oder wenigstens 👍:
 
+- [Effective Software Testing](https://www.manning.com/books/effective-software-testing)
 - [The Road to React](https://leanpub.com/the-road-to-learn-react)
 - [Product Management in Practice](https://www.oreilly.com/library/view/product-management-in/9781098119720/)
 - [Learning Functional Programming](https://www.oreilly.com/library/view/learning-functional-programming/9781098111748/)
@@ -27,6 +28,7 @@ Die folgenden Fachbücher habe [ich](/ingenieure) seit Mitte 2022 gelesen.
 
 👎 oder gar 👎👎:
 
+- [Learn API Testing](https://link.springer.com/book/10.1007/978-1-4842-8142-0)
 - [Learn Functional Programming Without Fear](https://alvinalexander.gumroad.com/l/learnfp)
 - [Learning Domain-Driven Design](https://www.oreilly.com/library/view/learning-domain-driven-design/9781098100124/)
 - [API Design Patterns](https://www.manning.com/books/api-design-patterns)
