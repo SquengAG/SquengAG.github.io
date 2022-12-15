@@ -14,6 +14,7 @@ Die folgenden Fachbücher habe [ich](/ingenieure) seit Mitte 2022 gelesen.
 
 👍👍 oder wenigstens 👍:
 
+- [People First](https://rethinkpress.com/books/people-first/)
 - [Engineering Management for the Rest of Us](https://www.engmanagement.dev/)
 - [Effective Software Testing](https://www.manning.com/books/effective-software-testing)
 - [The Road to React](https://leanpub.com/the-road-to-learn-react)
