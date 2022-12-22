@@ -30,6 +30,7 @@ Die folgenden Fachbücher habe [ich](/ingenieure) seit Mitte 2022 gelesen.
 
 👎 oder gar 👎👎:
 
+- [Learn Scala 3 The Fast Way!](https://alvinalexander.gumroad.com/l/learn-scala3-fast)
 - [Learn API Testing](https://link.springer.com/book/10.1007/978-1-4842-8142-0)
 - [Learn Functional Programming Without Fear](https://alvinalexander.gumroad.com/l/learnfp)
 - [Learning Domain-Driven Design](https://www.oreilly.com/library/view/learning-domain-driven-design/9781098100124/)
