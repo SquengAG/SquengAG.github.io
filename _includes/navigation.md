@@ -4,6 +4,7 @@
 
 - [Über …](/)
 - [Bücher](/stapel)
+    - [Vom Nicht-Programmierer zum Software-Ingenieur](/lesen_bildet)
 - [Ingenieure](/ingenieure)
 - [Technologien](/technologien)
 - [Impressum](/impressum)
