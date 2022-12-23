@@ -40,6 +40,20 @@ Dabei habe ich grundsätzlich nichts gegen Bücher, die kurz & bündig eine Prog
 
 ### Vom Programmierer zum Software-Entwickler
 
+#### Security as a Forethought
+
+Heutzutage wäre es unverantwortlich, Software ohne Rücksicht auf ihre Sicherheit zu entwickeln. Zwar muss die Betreiberin der Software sich mit Fragen des [Datenschutzes](https://dpunkt.de/produkt/cloud-computing-nach-der-datenschutz-grundverordnung/) und der [Privatheit](http://williamstallings.com/Privacy/) auseinandersetzen und ihre Politik (gegenüber Kunden, Benutzern etc.) festlegen, welche teils mit Sicherheitsmechanismen durchgesetzt wird. Doch Sofwaresicherheit (nicht zu verwechseln mit Sicherheitssoftware) ist die Verantwortung jeder einzelnen Software-Entwicklerin und jedes einzelnen Software-Entwicklers.
+
+![eine meiner Unterrichtsfolien aus dem Jahr 2015](SecSWvsSWsec.png)
+
+**[*Designing Secure Software*](https://nostarch.com/designing-secure-software) ist Pflichtlektüre für alle (angehenden) Software-Entwickler.** Darüber hinaus ist es unabdingbar, sich auch mit Softwaresicherheit in Bezug auf die eingesetzte [Programmiersprache](https://wiki.sei.cmu.edu/confluence/display/seccode/) (z.B. [Java](https://www.mhprofessional.com/iron-clad-java-9780071835886-usa)) sowie aller anderen Technologien (z.B. [Web](https://nostarch.com/websecurity)) auseinanderzusetzen.
+
+#### Objektorientierte Programmierung
+
+Heutzutage kommt man typischerweise schon in Berührung mit objektorientierter Programmierung (OOP), wenn man programmieren lernt. Auch [das oben empfohlene Buch](https://www.routledge.com/Introduction-to-Programming-and-Problem-Solving-Using-Scala/Lewis-Lacher/p/book/9781498730952) sowie [sein zweiter Band](https://www.routledge.com/Object-Orientation-Abstraction-and-Data-Structures-Using-Scala/Lewis-Lacher/p/book/9781498732161) bieten eine Einführung in die OOP.
+
+**Mein Lieblingsbuch zu OOP ist [*Objektorientierte Programmierung in Oberon-2*](https://link.springer.com/book/10.1007/978-3-642-58985-0).** Da das Buch jedoch schon etwa ein Vierteljahrhundert auf dem Buckel hat, werde ich in nächster Zeit prüfen, ob [*Objektorientierte Programmierung*](https://www.rheinwerk-verlag.de/objektorientierte-programmierung-das-umfassende-handbuch/) (m)eine Empfehlung wert ist; *stay tuned!*
+
 FORTSETZUNG FOLGT …
 
 <!--
@@ -47,12 +61,11 @@ reminders to myself:
 
 - [Adaptive Code](https://www.microsoftpressstore.com/store/adaptive-code-agile-coding-with-design-patterns-and-9781509302581)
 - [Clean Architecture](https://www.informit.com/store/clean-architecture-a-craftsmans-guide-to-software-structure-9780134494166)
-- [Designing Secure Software](https://nostarch.com/designing-secure-software)
-    - ![Sicherheitssoftware vs. Softwaresicherheit](SecSWvsSWsec.png)
 - [Domain Modeling Made Functional](https://pragprog.com/titles/swdddf/domain-modeling-made-functional/)
 - [Effective Software Testing](https://www.manning.com/books/effective-software-testing)
 - Pflicht: [Functional and Concurrent Programming](https://www.informit.com/store/functional-and-concurrent-programming-core-concepts-9780137466542)
     - Kür: [Functional Programming in Scala](https://www.manning.com/books/functional-programming-in-scala-second-edition)
+- 
 -->
 
 ### Vom Software-Entwickler zum Software-Ingenieur
