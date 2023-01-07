@@ -14,6 +14,7 @@ Die folgenden Fachbücher habe [ich](/ingenieure) seit Mitte 2022 gelesen.
 
 👍👍 oder wenigstens 👍:
 
+- [Strong Product People](https://www.strongproductpeople.com/book)
 - [Learning Spring Boot 3.0](https://www.packtpub.com/product/learning-spring-boot-30-third-edition/9781803233307) ([**Caveat**](https://www.merriam-webster.com/dictionary/caveat): Als Einführung in Spring Boot ist es 👍, als Vorlage in Sachen [*Reactive*](https://www.reactivemanifesto.org/), Sicherheit und Testen taugt es hingegen nicht.)
 - [Patterns of Software Construction](https://link.springer.com/book/10.1007/978-1-4842-7936-6)
 - [Core Java for the Impatient](https://horstmann.com/javaimpatient/index.html)
