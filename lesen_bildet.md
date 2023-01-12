@@ -54,6 +54,12 @@ Heutzutage kommt man typischerweise schon in Berührung mit objektorientierter P
 
 **Mein Lieblingsbuch zu OOP ist [*Objektorientierte Programmierung in Oberon-2*](https://link.springer.com/book/10.1007/978-3-642-58985-0).** Da das Buch jedoch schon etwa ein Vierteljahrhundert auf dem Buckel hat, werde ich in nächster Zeit prüfen, ob [*Objektorientierte Programmierung*](https://www.rheinwerk-verlag.de/objektorientierte-programmierung-das-umfassende-handbuch/) (m)eine Empfehlung wert ist; *stay tuned!*
 
+#### Funktionale Programmierung
+
+Etwa 2003 hat mich [Sebastian](https://www.imm.dtu.dk/~samo/) auf die Vorzüge der funktionalen Programmierung hingewiesen. Als erfahrener [Haskell](https://www.haskell.org/)-Programmierer wusste er, wovon er spricht. Ich hingegen masste mir mit meinen sage & schreibe fast zwei Jahren Industrie-Erfahrung das Urteil an, dass funktionale Programmierung vielleicht für Theoretiker interessant sei, aber doch nicht relevant für Praktiker. Sebastians Hinweis auf [*Beating the Averages*](http://paulgraham.com/avg.html) änderte noch nichts an meiner Einschätzung. (Erst Jahre später, nachdem ich [Paul Graham](http://paulgraham.com/) via [Y Combinator](https://www.ycombinator.com/) [nochmals] kennengelernt und begonnen hatte, [seine Essays](http://paulgraham.com/articles.html) zu lesen, realisierte ich, dass ich doch schon mal etwas von ihm gelesen hatte, dass viel mehr meiner Aufmerksamkeit verdient hätte …)
+
+Heute finden sich glücklicherweise viele Konzepte aus rein funktionalen Programmiersprachen in modernen, hybriden Programmiersprachen. Müsste man sie als Software-Entwickler wieder hergeben, würde man sie schmerzlich vermissen. Umgekehrt kann man immens davon profitieren und grosse Freude daran haben, wenn man sich etwas tiefer damit auseinandersetzt (und einmal mehr nicht nur mit ihrer Mechanik). Deshalb ist Teil I von **[*Functional and Concurrent Programming*](https://www.fcpbook.org/) Pflicht (und [*Functional Programming in Scala*](https://www.manning.com/books/functional-programming-in-scala-second-edition) Kür)**.
+
 FORTSETZUNG FOLGT …
 
 <!--
@@ -63,9 +69,7 @@ reminders to myself:
 - [Clean Architecture](https://www.informit.com/store/clean-architecture-a-craftsmans-guide-to-software-structure-9780134494166)
 - [Domain Modeling Made Functional](https://pragprog.com/titles/swdddf/domain-modeling-made-functional/)
 - [Effective Software Testing](https://www.manning.com/books/effective-software-testing)
-- Pflicht: [Functional and Concurrent Programming](https://www.informit.com/store/functional-and-concurrent-programming-core-concepts-9780137466542)
-    - Kür: [Functional Programming in Scala](https://www.manning.com/books/functional-programming-in-scala-second-edition)
-- 
+
 -->
 
 ### Vom Software-Entwickler zum Software-Ingenieur
