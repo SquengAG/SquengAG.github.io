@@ -35,6 +35,7 @@ Die folgenden Fachbücher habe [ich](/ingenieure) seit Mitte 2022 gelesen.
 
 👎 oder gar 👎👎:
 
+- [Grokking Functional Programming](https://www.manning.com/books/grokking-functional-programming)
 - [Testing Web APIs](https://www.manning.com/books/testing-web-apis)
 - [Learn Scala 3 The Fast Way!](https://alvinalexander.gumroad.com/l/learn-scala3-fast)
 - [Learn API Testing](https://link.springer.com/book/10.1007/978-1-4842-8142-0)
