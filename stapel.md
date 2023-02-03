@@ -14,6 +14,7 @@ Die folgenden Fachbücher habe [ich](/ingenieure) seit Mitte 2022 gelesen.
 
 👍👍 oder wenigstens 👍:
 
+- [The C4 model for visualising software architecture](https://leanpub.com/visualising-software-architecture)
 - [Scala for the Impatient](https://horstmann.com/scala/index.html)
 - [Functional and Concurrent Programming](https://www.fcpbook.org/) (Teil II habe ich noch nicht gelesen, aber nur schon Teil I macht es zur Pflichtlektüre.)
 - [Strong Product People](https://www.strongproductpeople.com/book)
