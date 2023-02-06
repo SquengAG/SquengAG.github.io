@@ -60,14 +60,23 @@ Etwa 2003 hat mich [Sebastian Mödersheim](https://www.imm.dtu.dk/~samo/) auf di
 
 Heute finden sich glücklicherweise viele Konzepte aus rein funktionalen Programmiersprachen in modernen, hybriden Programmiersprachen. Müsste man sie als Software-Entwickler wieder hergeben, würde man sie schmerzlich vermissen. Umgekehrt kann man immens davon profitieren und grosse Freude daran haben, wenn man sich etwas tiefer mit ihnen auseinandersetzt (und einmal mehr nicht nur mit ihrer Mechanik). Deshalb ist Teil I von **[*Functional and Concurrent Programming*](https://www.fcpbook.org/) Pflicht (und [*Functional Programming in Scala*](https://www.manning.com/books/functional-programming-in-scala-second-edition) Kür)**.
 
+#### Entwurf & Architektur
+
+Wenn sie nicht gerade aus der Feder der gleichen Autoren stammen, findet man kaum zwei Definitionen von Software-Architektur resp. Stellenbeschriebe von Software-Architekten, welche sich einig sind. Im Software-Kontext wird sogar unterschieden zwischen "entwerfen" (*to design*), [das als Verb existiert](https://www.merriam-webster.com/dictionary/design), und "architekten" (*to architect*), [**das auch im Englischen nicht als Verb existiert**](https://www.merriam-webster.com/dictionary/architect) …
+
+Im Geiste von KISS (Keep it simple, Squeng!) würde meine Definition eigentlich lauten: Software-Architekten entwerfen Software resp. Software-Architektur ist das Resultat von Software-Entwurf. Anders ausgedrückt würde ich Designer und Architekt im Kontext von Software als synonym betrachten. (Deshalb riskiere ich auch kein 🤯 bei der Feststellung, dass z.B. Innenarchitektur resp. Innenarchitekt mit [*interior design*](https://de.pons.com/%C3%BCbersetzung/deutsch-englisch/Innenarchitektur) resp. [*interior designer*](https://de.pons.com/%C3%BCbersetzung/deutsch-englisch/Innenarchitekt) übersetzt wird.)
+
+Konsequenterweise dürfte ich auch nicht unterschieden zwischen *design patterns* und *architecture patterns*, aber muss halt akzeptieren, dass damit in der Praxis verschiedene Dimensionen impliziert werden. (Vor Jahrzehnten hatte auch ich mal *"architecture is high-level design and design is low-level architecture"* geschrieben.) Und dass verschiedene Dimensionen unterschieden werden, ist tatsächlich sinnvoll, so wie auch in der Nicht-Software-Architektur z.B. zwischen Stadtarchitekten und Innenarchitekten unterschieden wird. Deshalb folgt nun eine Liste von lesenswerten Büchern:
+- "Was sind meine Verantwortlichkeiten, wenn ich als Software-Entwickler die Software-Architekten-Rolle spiele?" [Software Architecture for Developers](https://leanpub.com/software-architecture-for-developers)
+- "System-Architektur: Entwerfe ich einen modularen Monolithen oder eine Menge von Microservices?" [Software Architecture Patterns](https://www.oreilly.com/library/view/software-architecture-patterns/9781098134280/)
+- "Applikations-Architektur: Wie entwerfe ich ein Modul oder einen Microservice? *Spoiler alert!* Die Antwort lautet [clean](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)/[hexagonal](https://alistair.cockburn.us/hexagonal-architecture/)/[onion](https://jeffreypalermo.com/tag/onion-architecture/)." [Domain Modeling Made Functional](https://pragprog.com/titles/swdddf/domain-modeling-made-functional/)
+- "Wie entwerfe ich Funktionen oder Klassen eines Moduls oder eines Microservices?" [Adaptive Code](https://www.microsoftpressstore.com/store/adaptive-code-agile-coding-with-design-patterns-and-9781509302581) (eine dritte Auflage scheint in Vorbereitung zu sein)
+
 FORTSETZUNG FOLGT …
 
 <!--
 reminders to myself:
 
-- [Adaptive Code](https://www.microsoftpressstore.com/store/adaptive-code-agile-coding-with-design-patterns-and-9781509302581)
-- [Clean Architecture](https://www.informit.com/store/clean-architecture-a-craftsmans-guide-to-software-structure-9780134494166)
-- [Domain Modeling Made Functional](https://pragprog.com/titles/swdddf/domain-modeling-made-functional/)
 - [Effective Software Testing](https://www.manning.com/books/effective-software-testing)
 
 -->
