@@ -14,10 +14,11 @@ Die folgenden Fachbücher habe [ich](/ingenieure) seit Mitte 2022 gelesen.
 
 👍👍 oder wenigstens 👍:
 
+- [Building Modern Business Applications](https://link.springer.com/book/10.1007/978-1-4842-8992-1)
+- [Functional and Concurrent Programming](https://www.fcpbook.org/)
 - [Software Architecture for Developers](https://leanpub.com/software-architecture-for-developers)
 - [The C4 model for visualising software architecture](https://leanpub.com/visualising-software-architecture)
 - [Scala for the Impatient](https://horstmann.com/scala/index.html)
-- [Functional and Concurrent Programming](https://www.fcpbook.org/) (Teil II habe ich noch nicht gelesen, aber nur schon Teil I macht es zur Pflichtlektüre.)
 - [Strong Product People](https://www.strongproductpeople.com/book)
 - [Learning Spring Boot 3.0](https://www.packtpub.com/product/learning-spring-boot-30-third-edition/9781803233307) ([**Caveat**](https://www.merriam-webster.com/dictionary/caveat): Als Einführung in Spring Boot ist es 👍, als Vorlage in Sachen [*Reactive*](https://www.reactivemanifesto.org/), Sicherheit und Testen taugt es hingegen nicht.)
 - [Patterns of Software Construction](https://link.springer.com/book/10.1007/978-1-4842-7936-6)
