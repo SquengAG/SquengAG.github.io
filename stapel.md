@@ -14,6 +14,7 @@ Die folgenden Fachbücher habe [ich](/ingenieure) seit Mitte 2022 gelesen.
 
 👍👍 oder wenigstens 👍:
 
+- [The Essence of Software](https://essenceofsoftware.com/)
 - [Building Modern Business Applications](https://link.springer.com/book/10.1007/978-1-4842-8992-1)
 - [Functional and Concurrent Programming](https://www.fcpbook.org/)
 - [Software Architecture for Developers](https://leanpub.com/software-architecture-for-developers)
