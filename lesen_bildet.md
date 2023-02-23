@@ -8,7 +8,7 @@ description: building the right thing right
 
 ## Vom Nicht-Programmierer zum Software-Ingenieur
 
-Auch in der Software-Entwicklung gilt, dass Übung den Meister macht. Und je nach schulischer Ausbildung und beruflicher Weiterbildung hat man vielleicht das Glück, unter Anleitung von Lehrern, Mentoren etc. eine Stufe nach der anderen zu erklimmen. Doch wie wird man autodidaktisch Software-Ingenieur, wenn man noch Software-Entwickler ist, Software-Entwickler, wenn man noch Programmierer ist, oder Programmierer, wenn man noch Nicht-Programmierer ist? *[Thereʼs a book for that!](https://io.squeng.com/2019/03/17/nicht-nur-lesen-bildet/)*
+Auch in der Software-Entwicklung gilt, dass Übung den Meister macht. Und je nach schulischer Ausbildung und beruflicher Weiterbildung hat man vielleicht das Glück, unter Anleitung von Lehrern, Mentoren etc. eine Stufe nach der anderen zu erklimmen. Doch wie wird man autodidaktisch Software-Ingenieur, wenn man noch Software-Entwickler ist, Software-Entwickler, wenn man noch Programmierer ist, oder Programmierer, wenn man noch Nicht-Programmierer ist? *[Thereʼs a book for that!](https://squeng.wordpress.com/2019/03/17/nicht-nur-lesen-bildet/)*
 
 ---
 
