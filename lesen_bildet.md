@@ -67,19 +67,16 @@ Wenn sie nicht gerade aus der Feder der gleichen Autoren stammen, findet man kau
 Im Geiste von KISS (Keep it simple, Squeng!) würde meine Definition eigentlich lauten: Software-Architekten entwerfen Software resp. Software-Architektur ist das Resultat von Software-Entwurf. Anders ausgedrückt würde ich Designer und Architekt im Kontext von Software als synonym betrachten. (Deshalb riskiere ich auch kein 🤯 bei der Feststellung, dass z.B. Innenarchitektur resp. Innenarchitekt mit [*interior design*](https://de.pons.com/%C3%BCbersetzung/deutsch-englisch/Innenarchitektur) resp. [*interior designer*](https://de.pons.com/%C3%BCbersetzung/deutsch-englisch/Innenarchitekt) übersetzt wird.)
 
 Konsequenterweise dürfte ich auch nicht unterschieden zwischen *design patterns* und *architecture patterns*, aber muss halt akzeptieren, dass damit in der Praxis verschiedene Dimensionen impliziert werden. (Vor Jahrzehnten hatte auch ich mal *"architecture is high-level design and design is low-level architecture"* geschrieben.) Und dass verschiedene Dimensionen unterschieden werden, ist tatsächlich sinnvoll, so wie auch in der Nicht-Software-Architektur z.B. zwischen Stadtarchitekten und Innenarchitekten unterschieden wird. Deshalb folgt nun eine Liste von lesenswerten Büchern:
-- "Was sind meine Verantwortlichkeiten, wenn ich als Software-Entwickler die Software-Architekten-Rolle spiele?" [Software Architecture for Developers](https://leanpub.com/software-architecture-for-developers)
-- "System-Architektur: Entwerfe ich einen modularen Monolithen oder eine Menge von Microservices?" [Software Architecture Patterns](https://www.oreilly.com/library/view/software-architecture-patterns/9781098134280/)
-- "Applikations-Architektur: Wie entwerfe ich ein Modul oder einen Microservice? *Spoiler alert!* Die Antwort lautet [clean](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)/[hexagonal](https://alistair.cockburn.us/hexagonal-architecture/)/[onion](https://jeffreypalermo.com/tag/onion-architecture/)." [Domain Modeling Made Functional](https://pragprog.com/titles/swdddf/domain-modeling-made-functional/)
-- "Wie entwerfe ich Funktionen oder Klassen eines Moduls oder eines Microservices?" [Adaptive Code](https://www.microsoftpressstore.com/store/adaptive-code-agile-coding-with-design-patterns-and-9781509302581) (eine dritte Auflage scheint in Vorbereitung zu sein)
+- "Was sind meine Verantwortlichkeiten, wenn ich als Software-Entwickler die Software-Architekten-Rolle spiele?" [*Software Architecture for Developers*](https://leanpub.com/software-architecture-for-developers)
+- "System-Architektur: Entwerfe ich einen modularen Monolithen oder eine Menge von Microservices?" [*Software Architecture Patterns*](https://www.oreilly.com/library/view/software-architecture-patterns/9781098134280/)
+- "Applikations-Architektur: Wie entwerfe ich ein Modul oder einen Microservice?" (*Spoiler alert!* Die Antwort lautet [clean](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)/[hexagonal](https://alistair.cockburn.us/hexagonal-architecture/)/[onion](https://jeffreypalermo.com/tag/onion-architecture/).) [*Domain Modeling Made Functional*](https://pragprog.com/titles/swdddf/domain-modeling-made-functional/)
+- "Wie entwerfe ich Funktionen oder Klassen eines Moduls oder eines Microservices?" [*Adaptive Code*](https://www.microsoftpressstore.com/store/adaptive-code-agile-coding-with-design-patterns-and-9781509302581) (eine dritte Auflage scheint in Vorbereitung zu sein)
+
+#### Testen
+
+Zwar war ich mir der Wichtigkeit des Testens schon immer bewusst, dennoch musste man mich zwischen 25 und 45 zum Testen verknurren. Zwischen 45 und 65 will ich es viel besser machen, zumal ich mittlerweile grossen Gefallen am Thema gefunden habe, nicht zuletzt, weil Testen nicht nur die Implementation, sondern auch den Entwurf von Software unterstützt. **Allerspätestens seit [*Effective Software Testing*](https://www.manning.com/books/effective-software-testing) hätte ich ohnehin keine Ausrede mehr.**
 
 FORTSETZUNG FOLGT …
-
-<!--
-reminders to myself:
-
-- [Effective Software Testing](https://www.manning.com/books/effective-software-testing)
-
--->
 
 ### Vom Software-Entwickler zum Software-Ingenieur
 
