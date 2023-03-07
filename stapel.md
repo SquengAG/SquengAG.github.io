@@ -14,6 +14,7 @@ Die folgenden Fachbücher habe [ich](/ingenieure) seit Mitte 2022 gelesen.
 
 👍👍 oder wenigstens 👍:
 
+- [High Output Management](https://www.penguinrandomhouse.com/books/72467/high-output-management-by-andrew-s-grove-former-chairman-and-ceo-of-intel/)
 - [The Essence of Software](https://essenceofsoftware.com/)
 - [Building Modern Business Applications](https://link.springer.com/book/10.1007/978-1-4842-8992-1)
 - [Functional and Concurrent Programming](https://www.fcpbook.org/)
