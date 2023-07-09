@@ -52,6 +52,8 @@ Die folgenden Fachbücher habe [ich](/ingenieure) in den letzten 12 Monaten gele
 
 👎 oder gar 👎👎:
 
+<!-- July 2023 -->
+- [From Objects to Functions](https://pragprog.com/titles/uboop/from-objects-to-functions/)
 <!-- January 2023 -->
 - [Grokking Functional Programming](https://www.manning.com/books/grokking-functional-programming)
 <!-- December 2022 -->
