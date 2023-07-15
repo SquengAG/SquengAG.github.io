@@ -15,6 +15,7 @@ Die folgenden Fachbücher habe [ich](/ingenieure) in den letzten 12 Monaten gele
 👍👍 oder wenigstens 👍:
 
 <!-- July 2023 -->
+- [101 UX Principles](https://www.packtpub.com/product/101-ux-principles-second-edition/9781803234885)
 - [Software Architecture Patterns](https://www.oreilly.com/library/view/software-architecture-patterns/9781098134280/)
 <!-- June 2023 -->
 - [The Kubernetes Book](https://leanpub.com/thekubernetesbook)
