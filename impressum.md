@@ -9,7 +9,7 @@ description: building the right thing right
 ## Impressum
 
 Squeng AG\
-Lagerstrasse 4\
+Schwanenstrasse 3\
 9200 Gossau
 
 UID: CHE-383.211.903
