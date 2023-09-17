@@ -15,6 +15,7 @@ Die folgenden Fachbücher habe [ich](/ingenieure) in den letzten 12 Monaten gele
 👍👍 oder wenigstens 👍:
 
 <!-- October 2023 -->
+- [Easy and Affordable ISO 9001 / ISO 27001 Certification](https://tomvogel.gumroad.com/l/easy-and-affordable-iso-9001-27001-certification)
 - [Schweizer Kontenrahmen KMU](https://www.verlagskv.ch/produkte/schweizer-kontenrahmen-kmu)
 <!-- July 2023 -->
 - [101 UX Principles](https://www.packtpub.com/product/101-ux-principles-second-edition/9781803234885)
@@ -46,16 +47,17 @@ Die folgenden Fachbücher habe [ich](/ingenieure) in den letzten 12 Monaten gele
 - [Product Management in Practice](https://www.oreilly.com/library/view/product-management-in/9781098119720/)
 - [Learning Functional Programming](https://www.oreilly.com/library/view/learning-functional-programming/9781098111748/)
 - [Startup CXO](https://www.wiley.com/en-us/Startup+CXO%3A+A+Field+Guide+to+Scaling+Up+Your+Company%27s+Critical+Functions+and+Teams-p-9781119774068)
+
 <!-- August 2022
 - [Remote Engineering Management](https://www.alexandras.dev/book)
 - [Think Like a CTO](https://www.manning.com/books/think-like-a-cto)
- -->
+-->
 <!-- July 2022
 - [Effective Remote Work](https://pragprog.com/titles/jsrw/effective-remote-work/)
 - [The Kanban Pocket Guide](https://leanpub.com/thekanbanpocketguide)
 - [Software Architecture by Example](https://link.springer.com/book/10.1007/978-1-4842-7990-8)
 - [Team Topologies](https://teamtopologies.com/book)
- -->
+-->
  
 👎 oder gar 👎👎:
 
@@ -71,6 +73,7 @@ Die folgenden Fachbücher habe [ich](/ingenieure) in den letzten 12 Monaten gele
 - [Learn Functional Programming Without Fear](https://alvinalexander.gumroad.com/l/learnfp)
 <!-- October 2022 -->
 - [Learning Domain-Driven Design](https://www.oreilly.com/library/view/learning-domain-driven-design/9781098100124/)
+
 <!-- August 2022
 - [API Design Patterns](https://www.manning.com/books/api-design-patterns)
- -->
+-->
