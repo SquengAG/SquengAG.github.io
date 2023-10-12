@@ -88,4 +88,5 @@ reminders to myself:
 - [Continuous Delivery Pipelines](https://leanpub.com/cd-pipelines)
 - [Engineering Management for the Rest of Us](https://www.engmanagement.dev/)
 - [Product Management in Practice](https://www.oreilly.com/library/view/product-management-in/9781098119720/)
+- [Code](https://www.microsoftpressstore.com/store/code-the-hidden-language-of-computer-hardware-and-software-9780137909100)
 -->

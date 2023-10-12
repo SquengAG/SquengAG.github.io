@@ -15,6 +15,7 @@ Die folgenden Fachbücher habe [ich](/ingenieure) in den letzten 12 Monaten gele
 👍👍 oder wenigstens 👍:
 
 <!-- October 2023 -->
+- [Wild West to Agile](https://www.informit.com/store/wild-west-to-agile-adventures-in-software-development-9780137961009)
 - [Easy and Affordable ISO 9001 / ISO 27001 Certification](https://tomvogel.gumroad.com/l/easy-and-affordable-iso-9001-27001-certification)
 - [Schweizer Kontenrahmen KMU](https://www.verlagskv.ch/produkte/schweizer-kontenrahmen-kmu)
 <!-- July 2023 -->
@@ -71,9 +72,10 @@ Die folgenden Fachbücher habe [ich](/ingenieure) in den letzten 12 Monaten gele
 <!-- November 2022 -->
 - [Learn API Testing](https://link.springer.com/book/10.1007/978-1-4842-8142-0)
 - [Learn Functional Programming Without Fear](https://alvinalexander.gumroad.com/l/learnfp)
-<!-- October 2022 -->
-- [Learning Domain-Driven Design](https://www.oreilly.com/library/view/learning-domain-driven-design/9781098100124/)
 
+<!-- October 2022
+- [Learning Domain-Driven Design](https://www.oreilly.com/library/view/learning-domain-driven-design/9781098100124/)
+-->
 <!-- August 2022
 - [API Design Patterns](https://www.manning.com/books/api-design-patterns)
 -->
