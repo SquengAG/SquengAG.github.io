@@ -8,13 +8,14 @@ description: building the right thing right
 
 ## Bücher
 
-Die folgenden Fachbücher habe [ich](/ingenieure) in den letzten 12 Monaten gelesen.
+Die folgenden Fachbücher habe [ich](/ingenieure) in den letzten 18 Monaten gelesen.
 
 🤔: [Modern Software Engineering](/modern_software_engineering)
 
 👍👍 oder wenigstens 👍:
 
 <!-- October 2023 -->
+- [Discovering Kanban](https://kanbanbooks.com/discovering-kanban/)
 - [ISO 27001 ISMS Handbook](https://www.amazon.de/gp/search?ie=UTF8&tag=abodech-21&linkCode=ur2&linkId=89af7c19da42da9569daab17cdd18757&camp=1638&creative=6742&index=books&keywords=cees%20van%20der%20wens&s=date-desc-rank)
 - [Wild West to Agile](https://www.informit.com/store/wild-west-to-agile-adventures-in-software-development-9780137961009)
 - [Easy and Affordable ISO 9001 / ISO 27001 Certification](https://tomvogel.gumroad.com/l/easy-and-affordable-iso-9001-27001-certification)
@@ -50,18 +51,15 @@ Die folgenden Fachbücher habe [ich](/ingenieure) in den letzten 12 Monaten gele
 - [Product Management in Practice](https://www.oreilly.com/library/view/product-management-in/9781098119720/)
 - [Learning Functional Programming](https://www.oreilly.com/library/view/learning-functional-programming/9781098111748/)
 - [Startup CXO](https://www.wiley.com/en-us/Startup+CXO%3A+A+Field+Guide+to+Scaling+Up+Your+Company%27s+Critical+Functions+and+Teams-p-9781119774068)
-
-<!-- August 2022
+<!-- August 2022 -->
 - [Remote Engineering Management](https://www.alexandras.dev/book)
 - [Think Like a CTO](https://www.manning.com/books/think-like-a-cto)
--->
-<!-- July 2022
+<!-- July 2022-->
 - [Effective Remote Work](https://pragprog.com/titles/jsrw/effective-remote-work/)
 - [The Kanban Pocket Guide](https://leanpub.com/thekanbanpocketguide)
 - [Software Architecture by Example](https://link.springer.com/book/10.1007/978-1-4842-7990-8)
 - [Team Topologies](https://teamtopologies.com/book)
--->
- 
+
 👎 oder gar 👎👎:
 
 <!-- July 2023 -->
@@ -74,10 +72,7 @@ Die folgenden Fachbücher habe [ich](/ingenieure) in den letzten 12 Monaten gele
 <!-- November 2022 -->
 - [Learn API Testing](https://link.springer.com/book/10.1007/978-1-4842-8142-0)
 - [Learn Functional Programming Without Fear](https://alvinalexander.gumroad.com/l/learnfp)
-
-<!-- October 2022
+<!-- October 2022 -->
 - [Learning Domain-Driven Design](https://www.oreilly.com/library/view/learning-domain-driven-design/9781098100124/)
--->
-<!-- August 2022
+<!-- August 2022 -->
 - [API Design Patterns](https://www.manning.com/books/api-design-patterns)
--->
