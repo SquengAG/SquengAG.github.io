@@ -14,9 +14,12 @@ Die folgenden Fachbücher habe [ich](/ingenieure) in den letzten 18 Monaten gele
 
 👍👍 oder wenigstens 👍:
 
-<!-- October 2023 -->
+<!-- December 2023 -->
+- [React Programming](https://bignerdranch.com/books/react-programming-the-big-nerd-ranch-guide/)
+<!-- November 2023 -->
 - [Discovering Kanban](https://kanbanbooks.com/discovering-kanban/)
 - [ISO 27001 ISMS Handbook](https://www.amazon.de/gp/search?ie=UTF8&tag=abodech-21&linkCode=ur2&linkId=89af7c19da42da9569daab17cdd18757&camp=1638&creative=6742&index=books&keywords=cees%20van%20der%20wens&s=date-desc-rank)
+<!-- October 2023 -->
 - [Wild West to Agile](https://www.informit.com/store/wild-west-to-agile-adventures-in-software-development-9780137961009)
 - [Easy and Affordable ISO 9001 / ISO 27001 Certification](https://tomvogel.gumroad.com/l/easy-and-affordable-iso-9001-27001-certification)
 - [Schweizer Kontenrahmen KMU](https://www.verlagskv.ch/produkte/schweizer-kontenrahmen-kmu)
