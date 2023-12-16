@@ -15,6 +15,7 @@ Die folgenden Fachbücher habe [ich](/ingenieure) in den letzten 18 Monaten gele
 👍👍 oder wenigstens 👍:
 
 <!-- December 2023 -->
+- [AI-Powered Developer](https://www.manning.com/books/ai-powered-developer)
 - [Accelerate DevOps with GitHub](https://www.packtpub.com/product/accelerate-devops-with-github/9781801813358) ([**Caveat**](https://www.merriam-webster.com/dictionary/caveat): Die Teile, welche sich wirklich um DevOps und/oder GitHub drehen, sind ganz gut, die anderen Teile nicht so.)
 - [React Programming](https://bignerdranch.com/books/react-programming-the-big-nerd-ranch-guide/)
 <!-- November 2023 -->
