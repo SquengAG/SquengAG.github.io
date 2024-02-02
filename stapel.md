@@ -15,7 +15,7 @@ Die folgenden Fachbücher habe [ich](/ingenieure) in den letzten knapp zwei Jahr
 👍👍 oder wenigstens 👍:
 
 <!-- February 2024 -->
-- [Scrum and Kanban](https://www.amazon.de/Scrum-Kanban-Similarities-Differences-Combinations-ebook/dp/B0CGRWTP6J)
+- [Scrum and Kanban](https://www.amazon.de/Scrum-Kanban-Similarities-Differences-Combinations-ebook/dp/B0CGRWTP6J?&_encoding=UTF8&tag=abodech-21&linkCode=ur2&linkId=3e4adb0582e92a84c262328b9754f8cd&camp=1638&creative=6742)
 <!-- January 2024 -->
 - [Kanban – kurz & gut](https://dpunkt.de/produkt/kanban-kurz-gut/)
 <!-- December 2023 -->
