@@ -8,12 +8,14 @@ description: building the right thing right
 
 ## Bücher
 
-Die folgenden Fachbücher habe [ich](/ingenieure) in den letzten 18 Monaten gelesen.
+Die folgenden Fachbücher habe [ich](/ingenieure) in den letzten knapp zwei Jahren gelesen.
 
 🤔: [Modern Software Engineering](/modern_software_engineering)
 
 👍👍 oder wenigstens 👍:
 
+<!-- February 2024 -->
+- [Scrum and Kanban](https://www.amazon.de/Scrum-Kanban-Similarities-Differences-Combinations-ebook/dp/B0CGRWTP6J)
 <!-- January 2024 -->
 - [Kanban – kurz & gut](https://dpunkt.de/produkt/kanban-kurz-gut/)
 <!-- December 2023 -->
