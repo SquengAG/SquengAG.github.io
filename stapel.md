@@ -15,6 +15,7 @@ Die folgenden Fachbücher habe [ich](/ingenieure) in den letzten knapp zwei Jahr
 👍👍 oder wenigstens 👍:
 
 <!-- February 2024 -->
+- [Full Stack Development with Spring Boot 3 and React](https://www.packtpub.com/product/full-stack-development-with-spring-boot-3-and-react-fourth-edition/9781805122463) ([**Caveat**](https://www.merriam-webster.com/dictionary/caveat): Der [CORS](https://cheatsheetseries.owasp.org/cheatsheets/REST_Security_Cheat_Sheet.html#cors)-Abschnitt ist nicht nur faul, sondern unsicher …)
 - [Scrum and Kanban](https://www.amazon.de/Scrum-Kanban-Similarities-Differences-Combinations-ebook/dp/B0CGRWTP6J?&_encoding=UTF8&tag=abodech-21&linkCode=ur2&linkId=3e4adb0582e92a84c262328b9754f8cd&camp=1638&creative=6742)
 <!-- January 2024 -->
 - [Kanban – kurz & gut](https://dpunkt.de/produkt/kanban-kurz-gut/)
