@@ -74,6 +74,8 @@ Die folgenden Fachbücher habe [ich](/ingenieure) in den letzten knapp zwei Jahr
 
 👎 oder gar 👎👎:
 
+<!-- March 2024 -->
+- [Security-Driven Software Development](https://www.packtpub.com/product/security-driven-software-development/9781835462836)
 <!-- July 2023 -->
 - [From Objects to Functions](https://pragprog.com/titles/uboop/from-objects-to-functions/)
 <!-- January 2023 -->
