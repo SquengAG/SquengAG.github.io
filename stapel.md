@@ -15,6 +15,7 @@ Die folgenden Fachbücher habe [ich](/ingenieure) in den letzten knapp zwei Jahr
 👍👍 oder wenigstens 👍:
 
 <!-- April 2024 -->
+- [Get Your Hands Dirty on Clean Architecture](https://leanpub.com/get-your-hands-dirty-on-clean-architecture)
 - [Software Requirements Essentials](https://www.informit.com/store/software-requirements-essentials-core-practices-for-9780138190286)
 <!-- March 2024 -->
 - [Learn React with TypeScript](https://www.packtpub.com/product/learn-react-with-typescript-second-edition/9781804614204)
