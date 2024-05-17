@@ -36,13 +36,13 @@ Bücher, die eine Einführung in die Programmierung versprechen, gibt es zuminde
 
 Dabei habe ich grundsätzlich nichts gegen Bücher, die kurz & bündig eine Programmier*sprache* einführen. [Horstmanns *… for the Impatient*-Bücher](https://horstmann.com/) z.B. mag ich sehr; er setzt jedoch auch klipp & klar Programmierkenntnisse voraus.
 
-**Auf jeden Fall kann ich [*Introduction to Programming and Problem-Solving Using Scala*](https://www.routledge.com/Introduction-to-Programming-and-Problem-Solving-Using-Scala/Lewis-Lacher/p/book/9781498730952) empfehlen und zwar die Kapitel 1 bis 10 sowie 13, 15 und 16.** Hinweise auf weitere sehr gute Bücher, insbesondere deutschsprachige, nehme [ich](/ingenieure) sehr gerne entgegen. Und da es bei aller Liebe zur Abstraktion hilft, etwas über das Innenleben eines Computers (Hardware, Systemsoftware etc.) zu verstehen, hoffe ich, im Frühling ergänzend auch noch [*Computer verstehen*](https://www.amazon.de/Computer-verstehen-Streifzug-Innenleben-Computers/dp/3658403136/) empfehlen zu können.
+**Auf jeden Fall kann ich [*Introduction to Programming and Problem-Solving Using Scala*](https://www.routledge.com/Introduction-to-Programming-and-Problem-Solving-Using-Scala/Lewis-Lacher/p/book/9781498730952) empfehlen und zwar die Kapitel 1 bis 10 sowie 13, 15 und 16.** Hinweise auf weitere sehr gute Bücher, insbesondere deutschsprachige, nehme [ich](/ingenieure) sehr gerne entgegen.
 
 ### Vom Programmierer zum Software-Entwickler
 
 #### Security as a Forethought
 
-Heutzutage wäre es unverantwortlich, Software ohne Rücksicht auf ihre Sicherheit zu entwickeln. Zwar muss die Betreiberin der Software sich mit Fragen des [Datenschutzes](https://dpunkt.de/produkt/cloud-computing-nach-der-datenschutz-grundverordnung/) und der [Privatheit](http://williamstallings.com/Privacy/) auseinandersetzen und ihre Politik (gegenüber Kunden, Benutzern etc.) festlegen, welche teils mit Sicherheitsmechanismen durchgesetzt wird. Doch Softwaresicherheit (nicht zu verwechseln mit Sicherheitssoftware) ist die Verantwortung jeder einzelnen Software-Entwicklerin und jedes einzelnen Software-Entwicklers.
+Heutzutage wäre es unverantwortlich, Software ohne Rücksicht auf ihre Sicherheit zu entwickeln. Zwar muss die Betreiberin der Software sich mit Fragen des [Datenschutzes](https://www.rheinwerk-verlag.de/datenschutz-und-it-compliance/) und der [Privatheit](http://williamstallings.com/Privacy/) auseinandersetzen und ihre Politik (gegenüber Kunden, Benutzern etc.) festlegen, welche teils mit Sicherheitsmechanismen durchgesetzt wird. Doch Softwaresicherheit (nicht zu verwechseln mit Sicherheitssoftware) ist die Verantwortung jeder einzelnen Software-Entwicklerin und jedes einzelnen Software-Entwicklers.
 
 ![eine meiner Unterrichtsfolien aus dem Jahr 2015](SecSWvsSWsec.png)
 
@@ -52,7 +52,7 @@ Heutzutage wäre es unverantwortlich, Software ohne Rücksicht auf ihre Sicherhe
 
 Heutzutage kommt man typischerweise schon in Berührung mit objektorientierter Programmierung (OOP), wenn man programmieren lernt. Auch [das oben empfohlene Buch](https://www.routledge.com/Introduction-to-Programming-and-Problem-Solving-Using-Scala/Lewis-Lacher/p/book/9781498730952) sowie [sein zweiter Band](https://www.routledge.com/Object-Orientation-Abstraction-and-Data-Structures-Using-Scala/Lewis-Lacher/p/book/9781498732161) bieten eine Einführung in OOP. In den letzten Jahrzehnten hat sich OOP auf breiter Front durchgesetzt, so dass Software-Entwickler sich auch damit auseinandersetzen sollten, wenn sie in erster Linie noch mit einer nicht-objektorientierten Programmiersprache wie z.B. [C](https://www.manning.com/books/modern-c) strukturiert programmieren.
 
-**Mein Lieblingsbuch zu OOP ist [*Objektorientierte Programmierung in Oberon-2*](https://link.springer.com/book/10.1007/978-3-642-58985-0).** Da das Buch jedoch schon etwa ein Vierteljahrhundert auf dem Buckel hat, werde ich in nächster Zeit prüfen, ob [*Objektorientierte Programmierung*](https://www.rheinwerk-verlag.de/objektorientierte-programmierung-das-umfassende-handbuch/) (m)eine Empfehlung wert ist; *stay tuned!*
+**Mein Lieblingsbuch zu OOP ist [*Objektorientierte Programmierung in Oberon-2*](https://link.springer.com/book/10.1007/978-3-642-58985-0).** Da das Buch jedoch schon etwa ein Vierteljahrhundert auf dem Buckel hat, könnte [*Objektorientierte Programmierung*](https://www.rheinwerk-verlag.de/objektorientierte-programmierung-das-umfassende-handbuch/) (m)eine Empfehlung wert sein.
 
 #### Funktionale Programmierung
 
@@ -89,4 +89,6 @@ reminders to myself:
 - [Engineering Management for the Rest of Us](https://www.engmanagement.dev/)
 - [Product Management in Practice](https://www.oreilly.com/library/view/product-management-in/9781098119720/)
 - [Code](https://www.microsoftpressstore.com/store/code-the-hidden-language-of-computer-hardware-and-software-9780137909100)
+- [Basiswissen Informatik](https://link.springer.com/book/10.1007/978-3-662-63939-9)
+- [Computer verstehen](https://www.amazon.de/Computer-verstehen-Streifzug-Innenleben-Computers/dp/3658403136/) 
 -->
