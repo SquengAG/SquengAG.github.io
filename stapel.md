@@ -8,12 +8,12 @@ description: building the right thing right
 
 ## Bücher
 
-Die folgenden Fachbücher habe [ich](/ingenieure) in den letzten knapp zwei Jahren gelesen.
-
 🤔: [Modern Software Engineering](/modern_software_engineering)
 
 👍👍 oder wenigstens 👍:
 
+<!-- June 2024 -->
+- [Agile Project Management with Kanban](https://www.microsoftpressstore.com/store/agile-project-management-with-kanban-9780735698956)
 <!-- April 2024 -->
 - [Get Your Hands Dirty on Clean Architecture](https://leanpub.com/get-your-hands-dirty-on-clean-architecture)
 - [Software Requirements Essentials](https://www.informit.com/store/software-requirements-essentials-core-practices-for-9780138190286)
