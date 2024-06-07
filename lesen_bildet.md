@@ -20,7 +20,7 @@ Bezeichnen Programmierer, Software-Entwickler und Software-Ingenieur nicht das g
 
 ---
 
-Bücher zu den Stichworten "programming", "software development" und "software engineering" gibt es wie Sand am Meer. [Viele sind sehr gut oder wenigstens gut, nicht wenige sind jedoch schlecht oder gar sehr schlecht.](https://www.squeng.com/stapel) Man bräuchte also nicht viel Pech, um als Anfänger an ein schlechtes Buch des entsprechenden Themas zu geraten, was die Gefahr bärge, den Stoff gar nicht zu verstehen und deshalb an sich selbst zu zweifeln oder ihn falsch zu verstehen und das falsch Gelernte dereinst mühsam umlernen zu müssen.
+Bücher zu den Stichworten "programming", "software development" und "software engineering" gibt es wie Sand am Meer. Viele sind sehr gut oder wenigstens gut, nicht wenige sind jedoch schlecht oder gar sehr schlecht. Man bräuchte also nicht viel Pech, um als Anfänger an ein schlechtes Buch des entsprechenden Themas zu geraten, was die Gefahr bärge, den Stoff gar nicht zu verstehen und deshalb an sich selbst zu zweifeln oder ihn falsch zu verstehen und das falsch Gelernte dereinst mühsam umlernen zu müssen.
 
 ### Vom Nicht-Programmierer zum Programmierer
 
