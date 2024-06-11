@@ -13,6 +13,7 @@ description: building the right thing right
 👍👍 oder wenigstens 👍:
 
 <!-- June 2024 -->
+- [Strong Product Communities](https://www.strongproductpeople.com/strong-product-communities)
 - [Agile Project Management with Kanban](https://www.microsoftpressstore.com/store/agile-project-management-with-kanban-9780735698956)
 <!-- April 2024 -->
 - [Get Your Hands Dirty on Clean Architecture](https://leanpub.com/get-your-hands-dirty-on-clean-architecture)
