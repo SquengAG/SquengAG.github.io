@@ -37,7 +37,6 @@ description: building the right thing right
 - [Easy and Affordable ISO 9001 / ISO 27001 Certification](https://tomvogel.gumroad.com/l/easy-and-affordable-iso-9001-27001-certification)
 - [Schweizer Kontenrahmen KMU](https://www.verlagskv.ch/produkte/schweizer-kontenrahmen-kmu)
 <!-- July 2023 -->
-- [Praxisbuch ISO/IEC 27001](https://www.hanser-fachbuch.de/fachbuch/artikel/9783446473959)
 - [101 UX Principles](https://www.packtpub.com/product/101-ux-principles-second-edition/9781803234885)
 - [Software Architecture Patterns](https://www.oreilly.com/library/view/software-architecture-patterns/9781098134280/)
 <!-- June 2023 -->
@@ -75,22 +74,3 @@ description: building the right thing right
 - [The Kanban Pocket Guide](https://leanpub.com/thekanbanpocketguide)
 - [Software Architecture by Example](https://link.springer.com/book/10.1007/978-1-4842-7990-8)
 - [Team Topologies](https://teamtopologies.com/book)
-
-👎 oder gar 👎👎:
-
-<!-- March 2024 -->
-- [Security-Driven Software Development](https://www.packtpub.com/product/security-driven-software-development/9781835462836)
-<!-- July 2023 -->
-- [From Objects to Functions](https://pragprog.com/titles/uboop/from-objects-to-functions/)
-<!-- January 2023 -->
-- [Grokking Functional Programming](https://www.manning.com/books/grokking-functional-programming)
-<!-- December 2022 -->
-- [Testing Web APIs](https://www.manning.com/books/testing-web-apis)
-- [Learn Scala 3 The Fast Way!](https://alvinalexander.gumroad.com/l/learn-scala3-fast)
-<!-- November 2022 -->
-- [Learn API Testing](https://link.springer.com/book/10.1007/978-1-4842-8142-0)
-- [Learn Functional Programming Without Fear](https://alvinalexander.gumroad.com/l/learnfp)
-<!-- October 2022 -->
-- [Learning Domain-Driven Design](https://www.oreilly.com/library/view/learning-domain-driven-design/9781098100124/)
-<!-- August 2022 -->
-- [API Design Patterns](https://www.manning.com/books/api-design-patterns)
