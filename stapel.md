@@ -13,6 +13,7 @@ description: building the right thing right
 👍👍 oder wenigstens 👍:
 
 <!-- June 2024 -->
+- [The 10-Second Customer Journey](https://practicalinspiration.com/book/the-10-second-customer-journey)
 - [Strong Product Communities](https://www.strongproductpeople.com/strong-product-communities)
 - [Agile Project Management with Kanban](https://www.microsoftpressstore.com/store/agile-project-management-with-kanban-9780735698956)
 <!-- April 2024 -->
