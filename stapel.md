@@ -12,6 +12,8 @@ description: building the right thing right
 
 👍👍 oder wenigstens 👍:
 
+<!-- July 2024 -->
+- [Understanding JavaScript Promises](https://leanpub.com/understanding-javascript-promises)
 <!-- June 2024 -->
 - [The 10-Second Customer Journey](https://practicalinspiration.com/book/the-10-second-customer-journey)
 - [Strong Product Communities](https://www.strongproductpeople.com/strong-product-communities)
