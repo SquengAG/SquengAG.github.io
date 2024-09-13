@@ -12,6 +12,8 @@ description: building the right thing right
 
 👍👍 oder wenigstens 👍:
 
+<!-- September 2024 -->
+- [Flow Engineering](https://itrevolution.com/product/flow-engineering/)
 <!-- July 2024 -->
 - [Understanding JavaScript Promises](https://leanpub.com/understanding-javascript-promises)
 <!-- June 2024 -->
