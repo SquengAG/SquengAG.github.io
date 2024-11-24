@@ -12,6 +12,8 @@ description: building the right thing right
 
 👍👍 oder wenigstens 👍:
 
+<!-- November 2024 -->
+- [Hypermedia Systems](https://hypermedia.systems/)
 <!-- September 2024 -->
 - [Flow Engineering](https://itrevolution.com/product/flow-engineering/)
 <!-- July 2024 -->
