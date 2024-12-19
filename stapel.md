@@ -13,6 +13,7 @@ description: building the right thing right
 👍👍 oder wenigstens 👍:
 
 <!-- December 2024 -->
+- [Crafting Secure Software](https://www.packtpub.com/en-ch/product/crafting-secure-software-9781835885079)
 - [Spring Boot 3](https://dpunkt.de/produkt/spring-boot-3/)
 <!-- November 2024 -->
 - [Hypermedia Systems](https://hypermedia.systems/)
