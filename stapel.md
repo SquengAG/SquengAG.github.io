@@ -12,6 +12,8 @@ description: building the right thing right
 
 👍👍 oder wenigstens 👍:
 
+<!-- January 2025 -->
+- [Digital MD](https://advantagebooks.com/books/digital-md/)
 <!-- December 2024 -->
 - [Threat Modeling Gameplay with EoP](https://www.packtpub.com/en-ch/product/threat-modeling-gameplay-with-eop-9781835089156)
 - [Crafting Secure Software](https://www.packtpub.com/en-ch/product/crafting-secure-software-9781835885079)
