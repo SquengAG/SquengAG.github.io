@@ -13,6 +13,7 @@ description: building the right thing right
 👍👍 oder wenigstens 👍:
 
 <!-- January 2025 -->
+- [Langlebige Software-Architekturen](https://dpunkt.de/produkt/langlebige-software-architekturen-4/)
 - [Solving Identity Management in Modern Applications](https://link.springer.com/book/10.1007/978-1-4842-8261-8)
 - [Digital MD](https://advantagebooks.com/books/digital-md/)
 <!-- December 2024 -->
