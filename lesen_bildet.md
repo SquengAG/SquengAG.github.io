@@ -89,6 +89,6 @@ reminders to myself:
 - [Engineering Management for the Rest of Us](https://www.engmanagement.dev/)
 - [Product Management in Practice](https://www.oreilly.com/library/view/product-management-in/9781098119720/)
 - [Code](https://www.microsoftpressstore.com/store/code-the-hidden-language-of-computer-hardware-and-software-9780137909100)
-- [Basiswissen Informatik](https://link.springer.com/book/10.1007/978-3-662-63939-9)
+- [Basiswissen Informatik](https://link.springer.com/book/10.1007/978-3-662-70121-8)
 - [Computer verstehen](https://www.amazon.de/Computer-verstehen-Streifzug-Innenleben-Computers/dp/3658403136/) 
 -->
