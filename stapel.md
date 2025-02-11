@@ -13,7 +13,8 @@ description: building the right thing right
 👍👍 oder wenigstens 👍:
 
 <!-- February 2025 -->
-- [Basiswissen Informatik])(https://link.springer.com/book/10.1007/978-3-662-70121-8)
+- [Datenschutz und IT-Compliance](https://www.rheinwerk-verlag.de/datenschutz-und-it-compliance/)
+- [Basiswissen Informatik](https://link.springer.com/book/10.1007/978-3-662-70121-8)
 <!-- January 2025 -->
 - [Langlebige Software-Architekturen](https://dpunkt.de/produkt/langlebige-software-architekturen-4/)
 - [Solving Identity Management in Modern Applications](https://link.springer.com/book/10.1007/978-1-4842-8261-8)
