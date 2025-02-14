@@ -13,6 +13,7 @@ description: building the right thing right
 👍👍 oder wenigstens 👍:
 
 <!-- February 2025 -->
+- [Architecture Modernization](https://www.manning.com/books/architecture-modernization)
 - [Datenschutz und IT-Compliance](https://www.rheinwerk-verlag.de/datenschutz-und-it-compliance/)
 - [Basiswissen Informatik](https://link.springer.com/book/10.1007/978-3-662-70121-8)
 <!-- January 2025 -->
