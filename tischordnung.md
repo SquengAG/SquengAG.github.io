@@ -46,20 +46,20 @@ description: building the right thing right
 
 <table>
   <tr>
-    <td>Mäsi</td>
     <td>Ayfer</td>
     <td>Tanja</td>
     <td>Dani</td>
     <td>Michelle</td>
     <td>Marco</td>
+    <td></td>
   </tr>
   <tr>
-    <td></td>
     <td>Viviane</td>
     <td>Jan</td>
-    <td>DS</td>
+    <td>Petronella</td>
     <td>Manfred</td>
     <td>Barb</td>
+    <td>Mäsi</td>
   </tr>
 </table>
 
@@ -70,7 +70,7 @@ description: building the right thing right
     <td>Evelin</td>
     <td>Andrin</td>
     <td>Gina</td>
-    <td>GC</td>
+    <td>Finn</td>
     <td>Jovin</td>
     <td>Kathy</td>
     <td>Berni</td>
@@ -79,8 +79,8 @@ description: building the right thing right
   <tr>
     <td>Pascal</td>
     <td>Cornel</td>
-    <td>GC</td>
-    <td>GC</td>
+    <td>Xavier</td>
+    <td>Julie</td>
     <td>Mila</td>
     <td>Manuel</td>
     <td>Barbara</td>
