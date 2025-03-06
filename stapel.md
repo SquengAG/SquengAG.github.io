@@ -12,6 +12,8 @@ description: building the right thing right
 
 👍👍 oder wenigstens 👍:
 
+<!-- March 2025 -->
+- [Finanzen einfach machen](https://montagshappen-verlag.de/produkt/finanzen-einfach-machen)
 <!-- February 2025 -->
 - [Architecture Modernization](https://www.manning.com/books/architecture-modernization)
 - [Datenschutz und IT-Compliance](https://www.rheinwerk-verlag.de/datenschutz-und-it-compliance/)
