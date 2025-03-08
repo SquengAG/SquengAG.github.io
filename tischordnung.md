@@ -31,14 +31,14 @@ description: building the right thing right
   <tr>
     <td>Elia</td>
     <td>Lenny</td>
-    <td>Ella</td>
     <td>Carla</td>
+    <td>Theo</td>
   </tr>
   <tr>
     <td>Leonie</td>
     <td>Annalena</td>
     <td>Iven</td>
-    <td>Mena</td>
+    <td>Ella</td>
   </tr>
 </table>
 
@@ -68,13 +68,13 @@ description: building the right thing right
 <table>
   <tr>
     <td>Evelin</td>
-    <td>Andrin</td>
+    <td></td>
     <td>Gina</td>
     <td>Finn</td>
     <td>Jovin</td>
     <td>Kathy</td>
-    <td>Berni</td>
-    <td></td>
+    <td>Alex</td>
+    <td>Barbara</td>
   </tr>
   <tr>
     <td>Pascal</td>
@@ -83,8 +83,8 @@ description: building the right thing right
     <td>Julie</td>
     <td>Mila</td>
     <td>Manuel</td>
-    <td>Barbara</td>
-    <td>Alex</td>
+    <td></td>
+    <td>Berni</td>
   </tr>
 </table>
 
