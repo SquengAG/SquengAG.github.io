@@ -32,13 +32,13 @@ description: building the right thing right
     <td>Elia</td>
     <td>Lenny</td>
     <td>Ella</td>
-    <td>Mena</td>
+    <td>Carla</td>
   </tr>
   <tr>
     <td>Leonie</td>
     <td>Annalena</td>
     <td>Iven</td>
-    <td></td>
+    <td>Mena</td>
   </tr>
 </table>
 
@@ -47,16 +47,16 @@ description: building the right thing right
 <table>
   <tr>
     <td>Ayfer</td>
-    <td>Tanja</td>
-    <td>Dani</td>
+    <td>Petronella</td>
+    <td>Jan</td>
     <td>Michelle</td>
     <td>Marco</td>
     <td></td>
   </tr>
   <tr>
     <td>Viviane</td>
-    <td>Jan</td>
-    <td>Petronella</td>
+    <td>Dani</td>
+    <td>Tanja</td>
     <td>Manfred</td>
     <td>Barb</td>
     <td>Mäsi</td>
