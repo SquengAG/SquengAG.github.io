@@ -99,7 +99,7 @@ description: building the right thing right
     <td>Raphael</td>
     <td>Evelyne</td>
     <td>Myke</td>
-    <td>Nicole</td>
+    <td></td>
   </tr>
   <tr>
     <td>Petra</td>
