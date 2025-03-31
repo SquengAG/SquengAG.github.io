@@ -13,6 +13,7 @@ description: building the right thing right
 👍👍 oder wenigstens 👍:
 
 <!-- March 2025 -->
+- [Kotlin in Action](https://www.manning.com/books/kotlin-in-action-second-edition)
 - [Mastering Domain-Driven Design](https://bpbonline.com/de/products/mastering-domain-driven-design)
 - [Finanzen einfach machen](https://montagshappen-verlag.de/produkt/finanzen-einfach-machen)
 <!-- February 2025 -->
