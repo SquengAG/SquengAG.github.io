@@ -12,6 +12,8 @@ description: building the right thing right
 
 👍👍 oder wenigstens 👍:
 
+<-- April 2025 -->
+- [Core Java for the Impatient](https://horstmann.com/javaimpatient/index.html)
 <!-- March 2025 -->
 - [Kotlin in Action](https://www.manning.com/books/kotlin-in-action-second-edition)
 - [Mastering Domain-Driven Design](https://bpbonline.com/de/products/mastering-domain-driven-design)
@@ -79,7 +81,6 @@ description: building the right thing right
 - [Learning Spring Boot 3.0](https://www.packtpub.com/product/learning-spring-boot-30-third-edition/9781803233307) ([**Caveat**](https://www.merriam-webster.com/dictionary/caveat): Als Einführung in Spring Boot ist es 👍, als Vorlage in Sachen [*Reactive*](https://www.reactivemanifesto.org/), Sicherheit und Testen taugt es hingegen nicht.)
 - [Patterns of Software Construction](https://link.springer.com/book/10.1007/978-1-4842-7936-6)
 <!-- December 2022 -->
-- [Core Java for the Impatient](https://horstmann.com/javaimpatient/index.html)
 - [People First](https://rethinkpress.com/books/people-first/)
 - [Engineering Management for the Rest of Us](https://www.engmanagement.dev/)
 <!-- November 2022 -->
