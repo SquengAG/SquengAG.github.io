@@ -12,7 +12,8 @@ description: building the right thing right
 
 👍👍 oder wenigstens 👍:
 
-<-- April 2025 -->
+<!-- April 2025 -->
+- [Revenue Operations](https://www.amazon.de/Revenue-Operations-Building-Function-Startup/dp/B0DPW3SZW4)
 - [Core Java for the Impatient](https://horstmann.com/javaimpatient/index.html)
 <!-- March 2025 -->
 - [Kotlin in Action](https://www.manning.com/books/kotlin-in-action-second-edition)
