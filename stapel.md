@@ -13,6 +13,7 @@ description: building the right thing right
 👍👍 oder wenigstens 👍:
 
 <!-- April 2025 -->
+- [The Pricing Roadmap](https://www.willingnesstopay.com/the-pricing-roadmap)
 - [Effect Oriented Programming](https://leanpub.com/effect-oriented-programming)
 - [Revenue Operations](https://www.amazon.de/Revenue-Operations-Building-Function-Startup/dp/B0DPW3SZW4)
 - [Core Java for the Impatient](https://horstmann.com/javaimpatient/index.html)
