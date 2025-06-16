@@ -13,6 +13,7 @@ description: building the right thing right
 👍👍 oder wenigstens 👍:
 
 <!-- June 2025 -->
+- [DDD 4 Developers](https://dpunkt.de/produkt/ddd-4-developers/)
 - [Cruising Along with Java](https://pragprog.com/titles/vscajava/cruising-along-with-java/)
 <!-- April 2025 -->
 - [The Pricing Roadmap](https://www.willingnesstopay.com/the-pricing-roadmap)
