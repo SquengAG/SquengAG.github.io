@@ -12,6 +12,8 @@ description: building the right thing right
 
 👍👍 oder wenigstens 👍:
 
+<!-- July 2025 -->
+- [The Biggest Ideas in the Universe, Vol. 1: Space, Time, and Motion](https://www.preposterousuniverse.com/biggestideas/)
 <!-- June 2025 -->
 - [DDD 4 Developers](https://dpunkt.de/produkt/ddd-4-developers/)
 - [Cruising Along with Java](https://pragprog.com/titles/vscajava/cruising-along-with-java/)
