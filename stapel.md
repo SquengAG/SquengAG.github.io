@@ -13,6 +13,7 @@ description: building the right thing right
 👍👍 oder wenigstens 👍:
 
 <!-- July 2025 -->
+- [Keycloak - Identity and Access Management for Modern Applications](https://www.packtpub.com/en-ch/product/keycloak-identity-and-access-management-for-modern-applications-9781804612613)
 - [The Biggest Ideas in the Universe, Vol. 1: Space, Time, and Motion](https://www.preposterousuniverse.com/biggestideas/)
 <!-- June 2025 -->
 - [DDD 4 Developers](https://dpunkt.de/produkt/ddd-4-developers/)
