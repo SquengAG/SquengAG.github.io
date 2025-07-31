@@ -13,6 +13,7 @@ description: building the right thing right
 👍👍 oder wenigstens 👍:
 
 <!-- July 2025 -->
+- [Real-World Kanban](https://pragprog.com/titles/mskanban2/real-world-kanban-second-edition/)
 - [Keycloak - Identity and Access Management for Modern Applications](https://www.packtpub.com/en-ch/product/keycloak-identity-and-access-management-for-modern-applications-9781804612613)
 - [The Biggest Ideas in the Universe, Vol. 1: Space, Time, and Motion](https://www.preposterousuniverse.com/biggestideas/)
 <!-- June 2025 -->
