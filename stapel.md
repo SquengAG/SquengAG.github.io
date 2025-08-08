@@ -12,6 +12,8 @@ description: building the right thing right
 
 👍👍 oder wenigstens 👍:
 
+<!-- August 2025 -->
+- [Einstieg in HTML und CSS](https://www.rheinwerk-verlag.de/einstieg-in-html-und-css/)
 <!-- July 2025 -->
 - [Real-World Kanban](https://pragprog.com/titles/mskanban2/real-world-kanban-second-edition/)
 - [Keycloak - Identity and Access Management for Modern Applications](https://www.packtpub.com/en-ch/product/keycloak-identity-and-access-management-for-modern-applications-9781804612613)
