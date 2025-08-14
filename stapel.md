@@ -13,6 +13,7 @@ description: building the right thing right
 👍👍 oder wenigstens 👍:
 
 <!-- August 2025 -->
+- [Taming Your Dragon](https://link.springer.com/book/10.1007/979-8-8688-0264-5)
 - [Einstieg in HTML und CSS](https://www.rheinwerk-verlag.de/einstieg-in-html-und-css/)
 <!-- July 2025 -->
 - [Real-World Kanban](https://pragprog.com/titles/mskanban2/real-world-kanban-second-edition/)
