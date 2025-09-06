@@ -12,6 +12,8 @@ description: building the right thing right
 
 👍👍 oder wenigstens 👍:
 
+<!-- September 2025 -->
+- [Hexagonal Architecture Explained](https://alistaircockburn.company.site/Epub-Hexagonal-Architecture-Explained-Updated-1st-ed-p751233517)
 <!-- August 2025 -->
 - [Taming Your Dragon](https://link.springer.com/book/10.1007/979-8-8688-0264-5)
 - [Einstieg in HTML und CSS](https://www.rheinwerk-verlag.de/einstieg-in-html-und-css/)
