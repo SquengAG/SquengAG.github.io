@@ -12,6 +12,8 @@ description: building the right thing right
 
 👍👍 oder wenigstens 👍:
 
+<!-- October 2025 -->
+- [The C4 model for visualising software architecture](https://leanpub.com/visualising-software-architecture)
 <!-- September 2025 -->
 - [Clean Architecture with Python](https://www.packtpub.com/en-ch/product/clean-architecture-with-python-9781836642886)
 - [Hexagonal Architecture Explained](https://alistaircockburn.company.site/Epub-Hexagonal-Architecture-Explained-Updated-1st-ed-p751233517)
@@ -90,7 +92,6 @@ description: building the right thing right
 - [Building Modern Business Applications](https://link.springer.com/book/10.1007/978-1-4842-8992-1)
 - [Functional and Concurrent Programming](https://www.fcpbook.org/)
 - [Software Architecture for Developers](https://leanpub.com/software-architecture-for-developers)
-- [The C4 model for visualising software architecture](https://leanpub.com/visualising-software-architecture)
 <!-- January 2023 -->
 - [Scala for the Impatient](https://horstmann.com/scala/index.html)
 - [Strong Product People](https://www.strongproductpeople.com/book)
