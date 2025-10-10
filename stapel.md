@@ -13,6 +13,7 @@ description: building the right thing right
 👍👍 oder wenigstens 👍:
 
 <!-- October 2025 -->
+- [The Biggest Ideas in the Universe, Vol. 2: Quanta and Fields](https://www.preposterousuniverse.com/biggestideas/)
 - [The C4 model for visualising software architecture](https://leanpub.com/visualising-software-architecture)
 <!-- September 2025 -->
 - [Clean Architecture with Python](https://www.packtpub.com/en-ch/product/clean-architecture-with-python-9781836642886)
