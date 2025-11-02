@@ -12,6 +12,8 @@ description: building the right thing right
 
 👍👍 oder wenigstens 👍:
 
+<!-- November 2025 -->
+- [Funktionale Programmierung in Java und Kotlin](https://dpunkt.de/produkt/funktionale-programmierung-in-java-und-kotlin/)
 <!-- October 2025 -->
 - [The Biggest Ideas in the Universe, Vol. 2: Quanta and Fields](https://www.preposterousuniverse.com/biggestideas/)
 - [The C4 model for visualising software architecture](https://leanpub.com/visualising-software-architecture)
