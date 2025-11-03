@@ -13,6 +13,7 @@ description: building the right thing right
 👍👍 oder wenigstens 👍:
 
 <!-- November 2025 -->
+- [The Hundred-Page Language Models Book](https://thelmbook.com/)
 - [Funktionale Programmierung in Java und Kotlin](https://dpunkt.de/produkt/funktionale-programmierung-in-java-und-kotlin/)
 <!-- October 2025 -->
 - [The Biggest Ideas in the Universe, Vol. 2: Quanta and Fields](https://www.preposterousuniverse.com/biggestideas/)
