@@ -13,6 +13,7 @@ description: building the right thing right
 👍👍 oder wenigstens 👍:
 
 <!-- November 2025 -->
+- [Compilerbau](https://dpunkt.de/produkt/compilerbau/)
 - [An Introduction to Secret Sharing](https://link.springer.com/book/10.1007/978-3-031-28161-7)
 - [The Hundred-Page Language Models Book](https://thelmbook.com/)
 - [Funktionale Programmierung in Java und Kotlin](https://dpunkt.de/produkt/funktionale-programmierung-in-java-und-kotlin/)
