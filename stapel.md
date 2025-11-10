@@ -13,6 +13,7 @@ description: building the right thing right
 👍👍 oder wenigstens 👍:
 
 <!-- November 2025 -->
+- [Architecture for Flow](https://www.informit.com/store/architecture-for-flow-adaptive-systems-with-domain-9780137393039)
 - [Introduction to Evolutionary Computing](https://link.springer.com/book/10.1007/978-3-662-44874-8)
 - [Compilerbau](https://dpunkt.de/produkt/compilerbau/)
 - [An Introduction to Secret Sharing](https://link.springer.com/book/10.1007/978-3-031-28161-7)
