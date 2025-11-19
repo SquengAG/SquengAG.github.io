@@ -8,12 +8,11 @@ description: building the right thing right
 
 ## Bücher
 
-🤔: [Modern Software Engineering](/modern_software_engineering)
-
 👍👍 oder wenigstens 👍:
 
 <!-- November 2025 -->
-- [Architecture for Flow](https://www.informit.com/store/architecture-for-flow-adaptive-systems-with-domain-9780137393039)
+- [Spring AI in Action](https://www.manning.com/books/spring-ai-in-action)
+- [Architecture for Flow](https://architectureforflow.com/)
 - [Introduction to Evolutionary Computing](https://link.springer.com/book/10.1007/978-3-662-44874-8)
 - [Compilerbau](https://dpunkt.de/produkt/compilerbau/)
 - [An Introduction to Secret Sharing](https://link.springer.com/book/10.1007/978-3-031-28161-7)
@@ -123,3 +122,5 @@ description: building the right thing right
 - [The Kanban Pocket Guide](https://leanpub.com/thekanbanpocketguide)
 - [Software Architecture by Example](https://link.springer.com/book/10.1007/978-1-4842-7990-8)
 - [Team Topologies](https://teamtopologies.com/book)
+
+🤔: [Modern Software Engineering](/modern_software_engineering)
