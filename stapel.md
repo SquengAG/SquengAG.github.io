@@ -11,6 +11,7 @@ description: building the right thing right
 👍👍 oder wenigstens 👍:
 
 <!-- November 2025 -->
+- [Clean Code](https://www.informit.com/store/clean-code-a-handbook-of-agile-software-craftsmanship-9780135398579)
 - [Spring AI in Action](https://www.manning.com/books/spring-ai-in-action)
 - [Architecture for Flow](https://architectureforflow.com/)
 - [Introduction to Evolutionary Computing](https://link.springer.com/book/10.1007/978-3-662-44874-8)
