@@ -28,7 +28,7 @@ spring.threads.virtual.enabled=true
 
 ### Create Subproject
 
-In order to protect the business logic / domain from the harsh world around it (the Web framework, the DBMS, etc.), I am applying the [Ports & Adapters](https://alistaircockburn.company.site/Epub-Hexagonal-Architecture-Explained-Updated-1st-ed-p751233517) pattern. I could do so within the main project, but I prefer to take advantage of Gradle's support for [multi-project builds](https://docs.gradle.org/current/userguide/multi_project_builds.html) so that Gradle helps enforcing the boundary.
+In order to protect the business logic / domain from the harsh world around it (the Web framework, the DBMS, etc.), I am applying the [Ports & Adapters](https://alistaircockburn.company.site/Epub-Hexagonal-Architecture-Explained-Updated-1st-ed-p751233517) pattern. I could do so within the main project, but I prefer to take advantage of Gradle's support for [multi-project builds](https://docs.gradle.org/current/userguide/multi_project_builds.html) so that Gradle can help enforcing the boundary.
 
 Furthermore, I want to implement the business logic / domain in Scala, which Gradle supports through its [Scala plugin](https://docs.gradle.org/current/userguide/scala_plugin.html).
 
@@ -37,15 +37,17 @@ Prepare the folders:
 - within the project folder, alongside the existing `src` folder, create a folder `hexagon`
 - within folder `hexagon`, create another `src` folder 
 - within folder `hexagon/src`, create folders `main` and `test`
-- within both folders `hexagon/src/main` and `hexagon/src/text`, create folders `resources` and `scala`
+- within folder `hexagon/src/main`, create folders `resources` and `scala`
+- within folder `hexagon/src/test`, create folder `scala`
 
 Prepare the configuration:
 
-- within the existing `build.gradle.kts` file, add the subproject as a dependency:
+- within the existing `build.gradle.kts` file, add the subproject as well as the [Scala library](https://mvnrepository.com/artifact/org.scala-lang/scala3-library) as dependencies:
 
 ```
 dependencies {
     implementation(project(":hexagon"))
+    implementation("org.scala-lang:scala3-library_3:3.3.7")
 
     implementation("org.springframework.boot:spring-boot-starter-webmvc")
 ```
@@ -53,7 +55,7 @@ dependencies {
 - within the existing `settings.gradle.kts` file, add the subproject as well:
 
 ```
-rootProject.name = "bootstrap"
+rootProject.name = "spring-clean"
 include("hexagon")
 ```
 
