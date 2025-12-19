@@ -85,6 +85,12 @@ scala {
 }
 ```
 
+In my experience, applying the Ports & Adapters pattern is not an option but a necessity. It is not even a trade-off, as it still allows for adopting a [Clean](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) or [Onion](https://jeffreypalermo.com/tag/onion-architecture/) architecture when desired. And while I appreciate the *concepts* of [Domain-Driven Design](https://leanpub.com/ddd-by-example) (DDD) as much as the next guy, I [do not follow them mechanically, let alone slavishly](https://www.heise.de/blog/Wendet-man-DDD-auf-DDD-an-bleibt-kein-Domain-Driven-Design-uebrig-11102739.html). I do not even limit myself to [OOP modeling](https://docs.scala-lang.org/scala3/book/taste-modeling.html#oop-domain-modeling); I find it perfectly fine to adopt [FP modeling](https://docs.scala-lang.org/scala3/book/domain-modeling-fp.html) and, for example, represent entities (which are conceptually mutable) by [case classes](https://docs.scala-lang.org/scala3/book/domain-modeling-tools.html#case-classes)/[data classes](https://kotlinlang.org/docs/data-classes.html)/[records](https://dev.java/learn/records/) within a request-response cycle.
+
+![The Insanely Effective Delivery Machine](TIEDM.png)
+
+source: [Domain Modeling Made Functional](https://pragprog.com/titles/swdddf/domain-modeling-made-functional/)
+
 ### Security as a Forethought
 
 ### Actuator
@@ -107,3 +113,6 @@ The [production API key]((https://platform.publicai.co/settings/api-keys)) will 
 As trivial as it may seem now, [Wells' *Inspecting Spring AI requests and responses* box on page 41](https://www.manning.com/books/spring-ai-in-action) helped me figure out that prefixing the model with `swiss-ai/` is the way to go (whereas overwriting the `spring.ai.model.chat` with `swiss-ai` is not as that would cause Spring AI to look for a [ChatModel](https://docs.spring.io/spring-ai/reference/api/chatmodel.html) implementation that does not [exist](https://docs.spring.io/spring-ai/reference/api/chat/comparison.html)).
 
 ![Logbook](Logbook.png)
+
+### Business Logic / Domain
+
