@@ -71,8 +71,7 @@ include("hexagon")
 - within folder `hexagon`, create another file `build.gradle.kts` with the following content:
 
 ```
-plugins
-{
+plugins {
     id("scala")
 }
 
@@ -95,7 +94,13 @@ source: [*Domain Modeling Made Functional*](https://pragprog.com/titles/swdddf/d
 
 Applying the Ports & Adapters pattern and enabling Spring Security in a teaching aid might seem like overkill. But you should bear with me. Too many textbook examples with concious shortcuts end up in prototypes which in turn end up in production. Eventually, some poor schmuck (quite possibly your future self) will have to [clean the mess up](https://codeartify.substack.com/p/effectively-separating-concerns-in-legacy-code).
 
-Just enabling Spring Security (simply by having included it above) without customizing it is fine at this stage. Being forced to sign in with either the temporary user created at start-up time or ... is a constant reminder
+Just enabling Spring Security (simply by having included it above) without configuring it is fine at this stage. Being forced to sign in with the temporary user created at start-up time is a constant reminder to properly configure security as well as a safety net should the app be deployed prematurely. And since the [developer tools](https://docs.spring.io/spring-boot/reference/using/devtools.html#using.devtools.globalsettings) have been included above, a convenience user could be added to [$HOME/.config/spring-boot.spring-boot-devtools.properties](https://docs.spring.io/spring-boot/reference/using/devtools.html#using.devtools.globalsettings) in the meantime:
+
+```
+spring.security.user.name=yours_truly
+spring.security.user.password=insecure_password
+spring.security.user.roles=MISCAST
+```
 
 ### Configure Spring AI
 
@@ -230,6 +235,8 @@ public class SmartAleckController {
 }
 ```
 
+In order for the subproject to be truly independent of Spring, we cannot use any Spring annotations within the hexagon and must configure the concrete adapters for the abstract ports outside of the subproject:
+
 ```java
 package com.squeng.apertus;
 
@@ -241,6 +248,7 @@ import com.squeng.apertus.driving_ports.SmartAleck;
 import com.squeng.apertus.operations.SmartAleckService;
 
 @Configuration
+// the configurator in Ports & Adapters (https://alistaircockburn.company.site/Epub-Hexagonal-Architecture-Explained-Updated-1st-ed-p751233517) terminology
 public class AppConfig {
 
     private final KnowItAll knowItAll;
