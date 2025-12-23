@@ -8,9 +8,11 @@ description: building the right thing right
 
 ## Apertus
 
-[Public AI](https://publicai.co/) and [Spring AI](https://spring.io/projects/spring-ai) make it easy to access [Apertus](https://www.swiss-ai.org/apertus).
+Via [Public AI](https://publicai.co/), [Spring AI](https://spring.io/projects/spring-ai) can use [Apertus](https://www.swiss-ai.org/apertus) with little effort. This guide shows how.
 
-To follow along, you need to be familiar with Spring (Boot) in general and Spring AI in particular. If that is not the case yet, check out [Spring in Action](https://www.manning.com/books/spring-in-action-sixth-edition) (or [Spring Boot 3](https://dpunkt.de/produkt/spring-boot-3/)) and [Spring AI in Action](https://www.manning.com/books/spring-ai-in-action), respectively. But if you already know how to [create projects](#create-project) [securely](#security-as-a-forethought) and [cleanly](#create-subproject), you can skip ahead to [the AI section](#configure-spring-ai).
+To follow along, you need to be familiar with [Spring](https://spring.io/) ([Boot](https://spring.io/projects/spring-boot)) in general and Spring AI in particular. If that is not the case yet, check out [Spring in Action](https://www.manning.com/books/spring-in-action-sixth-edition) (or [Spring Boot 3](https://dpunkt.de/produkt/spring-boot-3/)) and [Spring AI in Action](https://www.manning.com/books/spring-ai-in-action), respectively.
+
+If you already know how to [create projects](#create-project) [cleanly](#create-subproject) and how to configure them properly, you can skip ahead to [the AI section](#spring-ai-configuration).
 
 ### Create Project
 
@@ -32,7 +34,7 @@ Before Java 21, I would have included Spring Reactive Web instead of Spring Web.
 spring.threads.virtual.enabled=true
 ```
 
-### Create Subproject
+#### Create Subproject
 
 In order to protect the business logic / domain from the harsh world around it (the Web framework, the DBMS, etc.), I am applying the [Ports & Adapters](https://alistaircockburn.company.site/Epub-Hexagonal-Architecture-Explained-Updated-1st-ed-p751233517) pattern. I could do so within the main project, but I prefer to take advantage of Gradle's support for [multi-project builds](https://docs.gradle.org/current/userguide/multi_project_builds.html) so that Gradle can help enforcing the boundary.
 
@@ -90,11 +92,13 @@ In my experience, applying the Ports & Adapters pattern is not an option but a n
 
 source: [*Domain Modeling Made Functional*](https://pragprog.com/titles/swdddf/domain-modeling-made-functional/)
 
-### Security as a Forethought
+### General Spring Configuration
+
+#### Security as a Forethought
 
 Applying the Ports & Adapters pattern and enabling Spring Security in a teaching aid might seem like overkill. But you should bear with me. Too many textbook examples with concious shortcuts end up in prototypes which in turn end up in production. Eventually, some poor schmuck (quite possibly your future self) will have to [clean the mess up](https://codeartify.substack.com/p/effectively-separating-concerns-in-legacy-code).
 
-Just enabling Spring Security (simply by having included it above) without configuring it is fine at this stage. Being forced to sign in with the temporary user created at start-up time is a constant reminder to properly configure security as well as a safety net should the app be deployed prematurely. And since the [developer tools](https://docs.spring.io/spring-boot/reference/using/devtools.html#using.devtools.globalsettings) have been included above, a convenience user could be added to [$HOME/.config/spring-boot.spring-boot-devtools.properties](https://docs.spring.io/spring-boot/reference/using/devtools.html#using.devtools.globalsettings) in the meantime:
+Just enabling Spring Security (simply by having included it above) without configuring it is fine at this stage. Being forced to sign in with the temporary user created at start-up time is a constant reminder to properly configure security as well as a safety net should the app be deployed prematurely. And since the [developer tools](https://docs.spring.io/spring-boot/reference/using/devtools.html#using.devtools.globalsettings) have been included above, a convenience user could be added to [`$HOME/.config/spring-boot.spring-boot-devtools.properties`](https://docs.spring.io/spring-boot/reference/using/devtools.html#using.devtools.globalsettings) in the meantime:
 
 ```
 spring.security.user.name=yours_truly
@@ -102,7 +106,23 @@ spring.security.user.password=insecure_password
 spring.security.user.roles=MISCAST
 ```
 
-### Configure Spring AI
+#### Actuator
+
+#### Profiles
+
+[...](https://docs.spring.io/spring-boot/reference/features/external-config.html#features.external-config.files.profile-specific)
+
+Note that [*"Profiles are not supported in devtools properties/yaml files."*](https://docs.spring.io/spring-boot/reference/using/devtools.html#using.devtools.globalsettings)
+
+https://docs.spring.io/spring-boot/gradle-plugin/running.html#running-your-application.passing-arguments
+
+...
+
+#### JTE
+
+...
+
+### Spring AI Configuration
 
 The switch from Open AI to Public AI with one of the two Apertus models is made by adding the following lines to `src/main/resources/application.properties`:
 
@@ -115,13 +135,24 @@ spring.ai.openai.chat.options.model=swiss-ai/apertus-8b-instruct
 # spring.ai.openai.chat.options.model=swiss-ai/apertus-70b-instruct
 ```
 
-The [production API key]((https://platform.publicai.co/settings/api-keys)) will have to be configured through an environment variable. But since the [developer tools](https://docs.spring.io/spring-boot/reference/using/devtools.html#using.devtools.globalsettings) have been included above, the [development API key]((https://platform.publicai.co/settings/api-keys)) can be added to [$HOME/.config/spring-boot.spring-boot-devtools.properties](https://docs.spring.io/spring-boot/reference/using/devtools.html#using.devtools.globalsettings) and is picked up in [the usual order](https://docs.spring.io/spring-boot/reference/features/external-config.html).
+The [production API key]((https://platform.publicai.co/settings/api-keys)) will have to be configured through an environment variable. But since the [developer tools](https://docs.spring.io/spring-boot/reference/using/devtools.html#using.devtools.globalsettings) have been included above, the [development API key]((https://platform.publicai.co/settings/api-keys)) can be added to [`$HOME/.config/spring-boot.spring-boot-devtools.properties`](https://docs.spring.io/spring-boot/reference/using/devtools.html#using.devtools.globalsettings) and is picked up in [the usual order](https://docs.spring.io/spring-boot/reference/features/external-config.html).
 
 As trivial as it may seem now, [Wells' tip in the *Inspecting Spring AI requests and responses* box on page 41](https://www.manning.com/books/spring-ai-in-action) helped me figure out that prefixing the model with `swiss-ai/` is the way to go (whereas setting the `spring.ai.model.chat` property to `swiss-ai` is not as that would cause Spring AI to look for a [ChatModel](https://docs.spring.io/spring-ai/reference/api/chatmodel.html) implementation that does not [exist](https://docs.spring.io/spring-ai/reference/api/chat/comparison.html)).
 
 ![Logbook](Logbook.png)
 
+With a dev profile, the following lines can be added to `src/main/resources/application-dev.properties` and ...:
+
+```
+logging.level.org.zalando.logbook=TRACE
+logbook.format.style = http
+```
+
+From here on, you could try the [many third-party examples](https://github.com/spring-ai-community/awesome-spring-ai#code--examples) out with Apertus …
+
 ### Code
+
+… or continue with my example.
 
 #### Business Logic / Domain
 
@@ -248,7 +279,7 @@ import com.squeng.apertus.driving_ports.SmartAleck;
 import com.squeng.apertus.operations.SmartAleckService;
 
 @Configuration
-// the configurator in Ports & Adapters (https://alistaircockburn.company.site/Epub-Hexagonal-Architecture-Explained-Updated-1st-ed-p751233517) terminology
+// the configurator in Ports & Adapters terminology
 public class AppConfig {
 
     private final KnowItAll knowItAll;
@@ -264,14 +295,23 @@ public class AppConfig {
 }
 ```
 
-### Profiles
+```java
+package com.squeng.apertus;
 
-[...](https://docs.spring.io/spring-boot/reference/features/external-config.html#features.external-config.files.profile-specific)
+import org.springframework.boot.web.client.RestClientCustomizer;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
+import org.zalando.logbook.spring.LogbookClientHttpRequestInterceptor;
 
-### Actuator
+@Configuration
+@Profile("dev")
+public class AppConfigDev {
 
-...
-
-### JTE
-
-...
+    @Bean
+    // cf. Spring AI in Action, page 41
+    public RestClientCustomizer logbookCustomizer(LogbookClientHttpRequestInterceptor interceptor) {
+        return restClient -> restClient.requestInterceptor(interceptor);
+    }
+}
+```
