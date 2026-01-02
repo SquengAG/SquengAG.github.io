@@ -108,19 +108,27 @@ spring.security.user.roles=MISCAST
 
 #### Actuator
 
+Even though [Actuator](https://docs.spring.io/spring-boot/reference/actuator/index.html) provides features for managing and monitoring apps during production, we can take advantage of it as early as during development.
+
+Since the [developer tools](https://docs.spring.io/spring-boot/reference/using/devtools.html#using.devtools.globalsettings) have been included above, (additional) endpoints can be enabled in [`$HOME/.config/spring-boot.spring-boot-devtools.properties`](https://docs.spring.io/spring-boot/reference/using/devtools.html#using.devtools.globalsettings). For example, by enabling the `env` endpoint, we can not only visit `http://localhost:8080/actuator` and `http://localhost:8080/actuator/health` but also `http://localhost:8080/actuator/env`: `management.endpoints.web.exposure.include=env,health`
+
 #### Profiles
 
-[...](https://docs.spring.io/spring-boot/reference/features/external-config.html#features.external-config.files.profile-specific)
+[…](https://docs.spring.io/spring-boot/reference/features/external-config.html#features.external-config.files.profile-specific)
 
 Note that [*"Profiles are not supported in devtools properties/yaml files."*](https://docs.spring.io/spring-boot/reference/using/devtools.html#using.devtools.globalsettings)
 
 https://docs.spring.io/spring-boot/gradle-plugin/running.html#running-your-application.passing-arguments
 
-...
+![Run Task …](RunTask.png)
+
+![… With Args](WithArgs.png)
+
+…
 
 #### JTE
 
-...
+…
 
 ### Spring AI Configuration
 
@@ -137,15 +145,39 @@ spring.ai.openai.chat.options.model=swiss-ai/apertus-8b-instruct
 
 The [production API key]((https://platform.publicai.co/settings/api-keys)) will have to be configured through an environment variable. But since the [developer tools](https://docs.spring.io/spring-boot/reference/using/devtools.html#using.devtools.globalsettings) have been included above, the [development API key]((https://platform.publicai.co/settings/api-keys)) can be added to [`$HOME/.config/spring-boot.spring-boot-devtools.properties`](https://docs.spring.io/spring-boot/reference/using/devtools.html#using.devtools.globalsettings) and is picked up in [the usual order](https://docs.spring.io/spring-boot/reference/features/external-config.html).
 
-As trivial as it may seem now, [Wells' tip in the *Inspecting Spring AI requests and responses* box on page 41](https://www.manning.com/books/spring-ai-in-action) helped me figure out that prefixing the model with `swiss-ai/` is the way to go (whereas setting the `spring.ai.model.chat` property to `swiss-ai` is not as that would cause Spring AI to look for a [ChatModel](https://docs.spring.io/spring-ai/reference/api/chatmodel.html) implementation that does not [exist](https://docs.spring.io/spring-ai/reference/api/chat/comparison.html)).
+As trivial as it may seem now, [Wells' tip in the *Inspecting Spring AI requests and responses* box on page 41](https://www.manning.com/books/spring-ai-in-action) helped me figure out that prefixing the model with `swiss-ai/` is the way to go (whereas setting the `spring.ai.model.chat` property to `swiss-ai` is not as that would cause Spring AI to look for a [ChatModel](https://docs.spring.io/spring-ai/reference/api/chatmodel.html) implementation that does not [exist](https://docs.spring.io/spring-ai/reference/api/chat/comparison.html)):
 
-![Logbook](Logbook.png)
+> *"If you’d like to see what the raw request and response JSON looks like when submitting prompts with Spring AI, then you’ll want to add Logbook (https://github.com/zalando/logbook) to your project’s build"*
 
-With a dev profile, the following lines can be added to `src/main/resources/application-dev.properties` and ...:
+- Within the top-level `build.gradle.kts` file, add `implementation("org.zalando:logbook-spring-boot-starter:3.12.3")` to the `dependencies`.
+- With a dev profile (see above), add the following lines to `src/main/resources/application-dev.properties` …
 
 ```
 logging.level.org.zalando.logbook=TRACE
 logbook.format.style = http
+```
+
+- … and the following file/class to folder/package `src/main/java/com/squeng/apertus`:
+
+```java
+package com.squeng.apertus;
+
+import org.springframework.boot.web.client.RestClientCustomizer;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
+import org.zalando.logbook.spring.LogbookClientHttpRequestInterceptor;
+
+@Configuration
+@Profile("dev")
+public class AppConfigDev {
+
+    @Bean
+    // cf. Spring AI in Action, page 41
+    public RestClientCustomizer logbookCustomizer(LogbookClientHttpRequestInterceptor interceptor) {
+        return restClient -> restClient.requestInterceptor(interceptor);
+    }
+}
 ```
 
 From here on, you could try the [many third-party examples](https://github.com/spring-ai-community/awesome-spring-ai#code--examples) out with Apertus …
