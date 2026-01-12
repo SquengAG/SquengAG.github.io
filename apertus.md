@@ -128,6 +128,7 @@ https://docs.spring.io/spring-boot/gradle-plugin/running.html#running-your-appli
 
 #### JTE
 
+Disable [development mode](https://jte.gg/spring-boot-starter-3/#development) in `application.properties` by setting `gg.jte.development-mode` to `false`, but add `gg.jte.development-mode=false` to `application-dev.properties`. Furthermore, [precompile the templates for production](https://jte.gg/spring-boot-starter-3/#production) by adding `gg.jte.usePrecompiledTemplates=true` to `application.properties`.
 …
 
 ### Spring AI Configuration

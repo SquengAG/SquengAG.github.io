@@ -10,6 +10,8 @@ description: building the right thing right
 
 👍👍 oder wenigstens 👍:
 
+<!-- January 2026 -->
+- [A (Very) Short History of Life On Earth](https://www.panmacmillan.com/authors/henry-gee/a-very-short-history-of-life-on-earth/9781529060584)
 <!-- December 2025 -->
 - [Learn React with TypeScript](https://www.packtpub.com/en-ch/product/learn-react-with-typescript-9781836643166)
 <!-- November 2025 -->
