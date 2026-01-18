@@ -131,6 +131,10 @@ https://docs.spring.io/spring-boot/gradle-plugin/running.html#running-your-appli
 Disable [development mode](https://jte.gg/spring-boot-starter-3/#development) in `application.properties` by setting `gg.jte.development-mode` to `false`, but add `gg.jte.development-mode=false` to `application-dev.properties`. Furthermore, [precompile the templates for production](https://jte.gg/spring-boot-starter-3/#production) by adding `gg.jte.usePrecompiledTemplates=true` to `application.properties`.
 …
 
+##### i18n / l10n
+
+
+
 ### Spring AI Configuration
 
 The switch from Open AI to Public AI with one of the two Apertus models is made by adding the following lines to `src/main/resources/application.properties`:
