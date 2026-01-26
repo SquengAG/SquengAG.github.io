@@ -20,7 +20,7 @@ There are various ways to create a Spring Boot project. My preferred way is to u
 
 ![Basics](SIleft.png)
 
-(At the time of this writing, Kotlin does not support Java 25 and Spring AI does not support Spring Boot 4 yet, which is why Java 21 and Spring Boot 3 are selected instead.)
+(At the time of this writing, Kotlin does not support Java 25 yet, which is why Java 21 is selected instead.)
 
 Even though Spring AI does not explicitly support Apertus and/or Public AI, we do not have to extend Spring's [AI Model API](https://docs.spring.io/spring-ai/reference/api/index.html#_ai_model_api) as [Wells points out in the *OpenAI compatibility* box on page 13](https://www.manning.com/books/spring-ai-in-action):
 
@@ -54,7 +54,7 @@ Prepare the configuration:
 
 ```
 extra["scalaVersion"] = "3.3.7"
-extra["springAiVersion"] = "1.1.2"
+extra["springAiVersion"] = "2.0.0-M2"
 
 dependencies {
     implementation(project(":hexagon"))
@@ -154,7 +154,7 @@ As trivial as it may seem now, [Wells' tip in the *Inspecting Spring AI requests
 
 > *"If you’d like to see what the raw request and response JSON looks like when submitting prompts with Spring AI, then you’ll want to add Logbook (https://github.com/zalando/logbook) to your project’s build"*
 
-- Within the top-level `build.gradle.kts` file, add `implementation("org.zalando:logbook-spring-boot-starter:3.12.3")` to the `dependencies`.
+- Within the top-level `build.gradle.kts` file, add `implementation("org.zalando:logbook-spring-boot-starter:4.0.0-RC.1")` to the `dependencies`.
 - With a dev profile (see above), add the following lines to `src/main/resources/application-dev.properties` …
 
 ```
@@ -167,7 +167,7 @@ logbook.format.style = http
 ```java
 package com.squeng.apertus;
 
-import org.springframework.boot.web.client.RestClientCustomizer;
+import org.springframework.boot.restclient.RestClientCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
