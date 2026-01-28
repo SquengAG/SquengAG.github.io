@@ -213,7 +213,7 @@ package com.squeng.apertus.driven_ports
 import com.squeng.apertus.data.Answer
 import com.squeng.apertus.data.Question
 
-trait KnowItAll:
+trait ForGettingAnswers:
   def ask(question: Question): Answer
 ```
 
@@ -223,7 +223,7 @@ package com.squeng.apertus.driving_ports
 import com.squeng.apertus.data.Answer
 import com.squeng.apertus.data.Question
 
-trait SmartAleck:
+trait ForPuttingQuestions:
   def ask(question: Question): Answer
 ```
 
@@ -232,13 +232,13 @@ package com.squeng.apertus.operations
 
 import com.squeng.apertus.data.Answer
 import com.squeng.apertus.data.Question
-import com.squeng.apertus.driven_ports.KnowItAll
-import com.squeng.apertus.driving_ports.SmartAleck
+import com.squeng.apertus.driven_ports.ForGettingAnswers
+import com.squeng.apertus.driving_ports.ForPuttingQuestions
 
-class SmartAleckService(knowItAll: KnowItAll) extends SmartAleck:
+class QandAservice(oracle: ForGettingAnswers) extends ForPuttingQuestions:
 
   override def ask(question: Question): Answer =
-    knowItAll.ask(question)
+    oracle.ask(question)
 ```
 
 #### Spring
@@ -249,19 +249,21 @@ class SmartAleckService(knowItAll: KnowItAll) extends SmartAleck:
 package com.squeng.apertus.ai;
 
 import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import com.squeng.apertus.data.Answer;
 import com.squeng.apertus.data.Question;
-import com.squeng.apertus.driven_ports.KnowItAll;
+import com.squeng.apertus.driven_ports.ForGettingAnswers;
 
 @Component
-public class Chat implements KnowItAll {
+@Primary
+public class KnowItAll implements ForGettingAnswers {
 
     private final ChatClient chatClient;
 
-    public Chat(ChatClient.Builder chatClientBuilder) {
+    public KnowItAll(ChatClient.Builder chatClientBuilder) {
         this.chatClient = chatClientBuilder.build();
     }
 
@@ -275,6 +277,29 @@ public class Chat implements KnowItAll {
 }
 ```
 
+Note how `KnowItAll` is annotated with `@Primary`. During development or testing, we may not always want to actually query Apertus and instead use a dummy implementation of `ForGettingAnswers` such as the following:
+
+```java
+package com.squeng.apertus.dev;
+
+import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.squeng.apertus.data.Answer;
+import com.squeng.apertus.data.Question;
+import com.squeng.apertus.driven_ports.ForGettingAnswers;
+
+@Component
+public class SmartAleck implements ForGettingAnswers {
+
+    @Override
+    public Answer ask(Question question) {
+        return Answer.apply("figuring out the answer to this question is left as an exercise for the questioner");
+    }
+}
+```
+
 ```java
 package com.squeng.apertus.api;
 
@@ -284,21 +309,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.squeng.apertus.data.Question;
-import com.squeng.apertus.driving_ports.SmartAleck;
+import com.squeng.apertus.driving_ports.ForPuttingQuestions;
 
 @RestController
 @RequestMapping("/api/sa")
-public class SmartAleckController {
+public class QandAcontroller {
 
-    private final SmartAleck smartAleck;
+    private final ForPuttingQuestions researcher;
 
-    public SmartAleckController(SmartAleck smartAleck) {
-        this.smartAleck = smartAleck;
+    public QandAcontroller(ForPuttingQuestions researcher) {
+        this.researcher = researcher;
     }
 
     @GetMapping(produces = "text/plain")
     public String ask(@RequestParam String q) {
-        return smartAleck.ask(Question.apply(q)).a();
+        return researcher.ask(Question.apply(q)).a();
     }
 }
 ```
@@ -311,23 +336,23 @@ package com.squeng.apertus;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.squeng.apertus.driven_ports.KnowItAll;
-import com.squeng.apertus.driving_ports.SmartAleck;
-import com.squeng.apertus.operations.SmartAleckService;
+import com.squeng.apertus.driven_ports.ForGettingAnswers;
+import com.squeng.apertus.driving_ports.ForPuttingQuestions;
+import com.squeng.apertus.operations.QandAservice;
 
 @Configuration
 // the configurator in Ports & Adapters terminology
 public class AppConfig {
 
-    private final KnowItAll knowItAll;
+    private final ForGettingAnswers oracle;
 
-    public AppConfig(KnowItAll knowItAll) {
-        this.knowItAll = knowItAll;
+    public AppConfig(ForGettingAnswers oracle) {
+        this.oracle = oracle;
     }
 
     @Bean
-    public SmartAleck smartAleck() {
-        return new SmartAleckService(knowItAll);
+    public ForPuttingQuestions fpqService() {
+        return new QandAservice(oracle);
     }
 }
 ```
@@ -335,7 +360,7 @@ public class AppConfig {
 ```java
 package com.squeng.apertus;
 
-import org.springframework.boot.web.client.RestClientCustomizer;
+import org.springframework.boot.restclient.RestClientCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
