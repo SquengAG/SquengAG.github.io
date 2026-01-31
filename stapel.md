@@ -11,6 +11,7 @@ description: building the right thing right
 👍👍 oder wenigstens 👍:
 
 <!-- January 2026 -->
+- [Claude Code: The Complete Guide](https://www.linkedin.com/posts/david-ramsey-9b8231108_claudecode-iwroteabook-humblebrag-activity-7368664132440485889-vDlm)
 - [Generative KI mit Python](https://www.rheinwerk-verlag.de/generative-ki-mit-python/)
 - [A (Very) Short History of Life On Earth](https://www.panmacmillan.com/authors/henry-gee/a-very-short-history-of-life-on-earth/9781529060584)
 <!-- December 2025 -->
