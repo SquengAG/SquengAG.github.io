@@ -6,11 +6,11 @@ description: building the right thing right
 
 {% include navigation.md %}
 
-## Apertus
+## Apertizer
 
 Via [Public AI](https://publicai.co/), [Spring AI](https://spring.io/projects/spring-ai) can use [Apertus](https://www.swiss-ai.org/apertus) with little effort. This guide shows how.
 
-To follow along, you need to be familiar with [Spring](https://spring.io/) ([Boot](https://spring.io/projects/spring-boot)) in general and Spring AI in particular. If that is not the case yet, check out [Spring in Action](https://www.manning.com/books/spring-in-action-sixth-edition) (or [Spring Boot 3](https://dpunkt.de/produkt/spring-boot-3/)) and [Spring AI in Action](https://www.manning.com/books/spring-ai-in-action), respectively.
+To follow along, you need to be familiar with [Spring](https://spring.io/) ([Boot](https://spring.io/projects/spring-boot)) in general and Spring AI in particular. If that is not the case yet, check out [Spring in Action](https://www.manning.com/books/spring-in-action-sixth-edition) and [Spring AI in Action](https://www.manning.com/books/spring-ai-in-action), respectively.
 
 If you already know how to [create projects](#create-project) [cleanly](#create-subproject) and how to configure them properly, you can skip ahead to [the AI section](#spring-ai-configuration).
 
@@ -66,7 +66,7 @@ dependencies {
 - within the existing `settings.gradle.kts` file, add the subproject as well:
 
 ```
-rootProject.name = "apertus"
+rootProject.name = "apertizer"
 include("hexagon")
 ```
 
@@ -98,13 +98,75 @@ source: [*Domain Modeling Made Functional*](https://pragprog.com/titles/swdddf/d
 
 Applying the Ports & Adapters pattern and enabling Spring Security in a teaching aid might seem like overkill. But you should bear with me. Too many textbook examples with concious shortcuts end up in prototypes which in turn end up in production. Eventually, some poor schmuck (quite possibly your future self) will have to [clean the mess up](https://codeartify.substack.com/p/effectively-separating-concerns-in-legacy-code).
 
-Just enabling Spring Security (simply by having included it above) without configuring it is fine at this stage. Being forced to sign in with the temporary user created at start-up time is a constant reminder to properly configure security as well as a safety net should the app be deployed prematurely. And since the [developer tools](https://docs.spring.io/spring-boot/reference/using/devtools.html#using.devtools.globalsettings) have been included above, a convenience user could be added to [`$HOME/.config/spring-boot.spring-boot-devtools.properties`](https://docs.spring.io/spring-boot/reference/using/devtools.html#using.devtools.globalsettings) in the meantime:
+Just enabling Spring Security (simply by having included it above) without configuring it would be fine at this stage. Being forced to sign in with the temporary user created at start-up time would be a constant reminder to properly configure security and would also be a safety net should the app be deployed prematurely. And since the [developer tools](https://docs.spring.io/spring-boot/reference/using/devtools.html#using.devtools.globalsettings) have been included above, a convenience user could be added to [`$HOME/.config/spring-boot.spring-boot-devtools.properties`](https://docs.spring.io/spring-boot/reference/using/devtools.html#using.devtools.globalsettings) in the meantime:
 
 ```
 spring.security.user.name=yours_truly
 spring.security.user.password=insecure_password
 spring.security.user.roles=MISCAST
 ```
+
+Nevertheless, we can do better from the start by adding the following [configuration file/class](https://docs.spring.io/spring-boot/reference/using/configuration-classes.html) to folder/package `src/main/java/com/squeng/apertizer`:
+```java
+package com.squeng.apertizer;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.web.SecurityFilterChain;
+
+@Configuration
+@EnableMethodSecurity(jsr250Enabled = true)
+@EnableWebSecurity
+public class AppConfigSec {
+
+        @Bean
+        public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+                http.securityMatcher("/**")
+                                .authorizeHttpRequests(authorize -> authorize
+                                                .requestMatchers("/actuator/**")
+                                                .hasRole("ADMIN")
+                                                .requestMatchers("/api/**")
+                                                .hasRole("USER")
+                                                .requestMatchers("/", "/jte/**", "/*.css")
+                                                .permitAll()
+                                                .anyRequest()
+                                                .authenticated())
+                                .headers(headers -> headers
+                                                .contentSecurityPolicy(csp -> csp
+                                                                .policyDirectives(String.join("; ",
+                                                                                "default-src 'none'",
+                                                                                "connect-src 'self'",
+                                                                                "font-src 'self' https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/",
+                                                                                "img-src 'self'",
+                                                                                "script-src 'self' https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/ https://cdn.jsdelivr.net/npm/htmx.org@2.0.8/",
+                                                                                "style-src 'self' https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/ https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/",
+                                                                                "frame-ancestors 'none'"))))
+                                .httpBasic(Customizer.withDefaults());
+                return http.build();
+        }
+}
+```
+
+Since [*"Spring Boot Starter Security does not activate method-level authorization by default"*](https://docs.spring.io/spring-security/reference/servlet/authorization/method-security.html), we activate it with `@EnableMethodSecurity`. However, if we are serious about keeping the business logic / domain independent of Spring, we must not annotate its methods with Spring-specific annotations, which is why we [allow for using JSR-250 annotations](https://docs.spring.io/spring-security/reference/servlet/authorization/method-security.html#use-jsr250).
+
+There is no need to decide against request-level authorization when deciding for method-level authorization. We can use the best of [both worlds](https://docs.spring.io/spring-security/reference/servlet/authorization/method-security.html#request-vs-method).
+
+It is tempting to [hiearchically order roles](https://docs.spring.io/spring-security/reference/servlet/authorization/architecture.html#authz-hierarchical-roles) `ADMIN` and `USER`.
+
+```java
+        @Bean
+        public RoleHierarchy roleHierarchy() {
+                return RoleHierarchyImpl.fromHierarchy("ROLE_ADMIN > ROLE_USER");
+        }
+```
+
+But when you access your production system, you should conciously sign in as either an admin or a user, but not both at the same time.
+
+As is to be expected, the [default security headers](https://docs.spring.io/spring-security/reference/features/exploits/headers.html#headers-default) are a good start. Adding a restrictive [Content Security Policy](https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html) is even better. And remember to regularly check your app with [Mozilla's HTTP Observatory](https://developer.mozilla.org/en-US/observatory).
 
 #### Actuator
 
@@ -162,10 +224,10 @@ logging.level.org.zalando.logbook=TRACE
 logbook.format.style = http
 ```
 
-- … and the following file/class to folder/package `src/main/java/com/squeng/apertus`:
+- … and the following [configuration file/class](https://docs.spring.io/spring-boot/reference/using/configuration-classes.html) to folder/package `src/main/java/com/squeng/apertizer`:
 
 ```java
-package com.squeng.apertus;
+package com.squeng.apertizer;
 
 import org.springframework.boot.restclient.RestClientCustomizer;
 import org.springframework.context.annotation.Bean;
@@ -196,44 +258,44 @@ From here on, you could try the [many third-party examples](https://github.com/s
 ![Q&A Domain](QandAdomain.png)
 
 ```scala
-package com.squeng.apertus.data
+package com.squeng.apertizer.data
 
 final case class Answer(a: String)
 ```
 
 ```scala
-package com.squeng.apertus.data
+package com.squeng.apertizer.data
 
 final case class Question(q: String)
 ```
 
 ```scala
-package com.squeng.apertus.driven_ports
+package com.squeng.apertizer.driven_ports
 
-import com.squeng.apertus.data.Answer
-import com.squeng.apertus.data.Question
+import com.squeng.apertizer.data.Answer
+import com.squeng.apertizer.data.Question
 
 trait ForGettingAnswers:
   def ask(question: Question): Answer
 ```
 
 ```scala
-package com.squeng.apertus.driving_ports
+package com.squeng.apertizer.driving_ports
 
-import com.squeng.apertus.data.Answer
-import com.squeng.apertus.data.Question
+import com.squeng.apertizer.data.Answer
+import com.squeng.apertizer.data.Question
 
 trait ForPuttingQuestions:
   def ask(question: Question): Answer
 ```
 
 ```scala
-package com.squeng.apertus.operations
+package com.squeng.apertizer.operations
 
-import com.squeng.apertus.data.Answer
-import com.squeng.apertus.data.Question
-import com.squeng.apertus.driven_ports.ForGettingAnswers
-import com.squeng.apertus.driving_ports.ForPuttingQuestions
+import com.squeng.apertizer.data.Answer
+import com.squeng.apertizer.data.Question
+import com.squeng.apertizer.driven_ports.ForGettingAnswers
+import com.squeng.apertizer.driving_ports.ForPuttingQuestions
 
 class QandAservice(oracle: ForGettingAnswers) extends ForPuttingQuestions:
 
@@ -246,16 +308,16 @@ class QandAservice(oracle: ForGettingAnswers) extends ForPuttingQuestions:
 ![Controller and Chat](CandC.png)
 
 ```java
-package com.squeng.apertus.ai;
+package com.squeng.apertizer.ai;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.squeng.apertus.data.Answer;
-import com.squeng.apertus.data.Question;
-import com.squeng.apertus.driven_ports.ForGettingAnswers;
+import com.squeng.apertizer.data.Answer;
+import com.squeng.apertizer.data.Question;
+import com.squeng.apertizer.driven_ports.ForGettingAnswers;
 
 @Component
 @Primary
@@ -280,15 +342,15 @@ public class KnowItAll implements ForGettingAnswers {
 Note how `KnowItAll` is annotated with `@Primary`. During development or testing, we may not always want to actually query Apertus and instead use a dummy implementation of `ForGettingAnswers` such as the following:
 
 ```java
-package com.squeng.apertus.dev;
+package com.squeng.apertizer.dev;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.squeng.apertus.data.Answer;
-import com.squeng.apertus.data.Question;
-import com.squeng.apertus.driven_ports.ForGettingAnswers;
+import com.squeng.apertizer.data.Answer;
+import com.squeng.apertizer.data.Question;
+import com.squeng.apertizer.driven_ports.ForGettingAnswers;
 
 @Component
 public class SmartAleck implements ForGettingAnswers {
@@ -301,15 +363,15 @@ public class SmartAleck implements ForGettingAnswers {
 ```
 
 ```java
-package com.squeng.apertus.api;
+package com.squeng.apertizer.api;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.squeng.apertus.data.Question;
-import com.squeng.apertus.driving_ports.ForPuttingQuestions;
+import com.squeng.apertizer.data.Question;
+import com.squeng.apertizer.driving_ports.ForPuttingQuestions;
 
 @RestController
 @RequestMapping("/api/sa")
@@ -331,14 +393,14 @@ public class QandAcontroller {
 In order for the subproject to be truly independent of Spring, we cannot use any Spring annotations within the hexagon and must configure the concrete adapters for the abstract ports outside of the subproject:
 
 ```java
-package com.squeng.apertus;
+package com.squeng.apertizer;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.squeng.apertus.driven_ports.ForGettingAnswers;
-import com.squeng.apertus.driving_ports.ForPuttingQuestions;
-import com.squeng.apertus.operations.QandAservice;
+import com.squeng.apertizer.driven_ports.ForGettingAnswers;
+import com.squeng.apertizer.driving_ports.ForPuttingQuestions;
+import com.squeng.apertizer.operations.QandAservice;
 
 @Configuration
 // the configurator in Ports & Adapters terminology
@@ -358,12 +420,22 @@ public class AppConfig {
 ```
 
 ```java
-package com.squeng.apertus;
+package com.squeng.apertizer;
+
+import java.util.List;
 
 import org.springframework.boot.restclient.RestClientCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
+import org.springframework.security.access.hierarchicalroles.RoleHierarchy;
+import org.springframework.security.access.hierarchicalroles.RoleHierarchyImpl;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.zalando.logbook.spring.LogbookClientHttpRequestInterceptor;
 
 @Configuration
@@ -374,6 +446,32 @@ public class AppConfigDev {
     // cf. Spring AI in Action, page 41
     public RestClientCustomizer logbookCustomizer(LogbookClientHttpRequestInterceptor interceptor) {
         return restClient -> restClient.requestInterceptor(interceptor);
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public UserDetailsService userDetailsService(PasswordEncoder encoder) {
+        return new InMemoryUserDetailsManager(List.of(
+                new User(
+                        "theUser", encoder.encode("insecure-password"),
+                        List.of(new SimpleGrantedAuthority("ROLE_USER"))),
+                new User(
+                        "theAdmin", encoder.encode("insecure-password"),
+                        List.of(new SimpleGrantedAuthority("ROLE_ADMIN"))),
+                new User(
+                        "theLazyDev", encoder.encode("insecure-password"),
+                        List.of(new SimpleGrantedAuthority("ROLE_LAZYDEV")))));
+    }
+
+    @Bean
+    public RoleHierarchy roleHierarchy() {
+        return RoleHierarchyImpl.withDefaultRolePrefix()
+                .role("LAZYDEV").implies("ADMIN", "USER")
+                .build();
     }
 }
 ```
