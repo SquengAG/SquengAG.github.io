@@ -45,8 +45,7 @@ Prepare the folders:
 - within the project folder, alongside the existing `src` folder, create a folder `hexagon`
 - within folder `hexagon`, create another `src` folder 
 - within folder `hexagon/src`, create folders `main` and `test`
-- within folder `hexagon/src/main`, create folders `resources` and `scala`
-- within folder `hexagon/src/test`, create folder `scala`
+- within both folder `hexagon/src/main` and folder `hexagon/src/test`, create folders `resources` and `scala`
 
 Prepare the configuration:
 
@@ -84,6 +83,10 @@ repositories {
 scala {
     scalaVersion = "3.3.7"
 }
+
+dependencies {
+    implementation("jakarta.annotation:jakarta.annotation-api:3.0.0")
+}
 ```
 
 In my experience, applying the Ports & Adapters pattern is not an option but a necessity. It is not even a trade-off, as it still allows for adopting a [Clean](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) or [Onion](https://jeffreypalermo.com/tag/onion-architecture/) architecture when desired. And while I appreciate the *concepts* of [Domain-Driven Design](https://leanpub.com/ddd-by-example) (DDD) as much as the next guy, I [do not follow them mechanically, let alone slavishly](https://www.heise.de/blog/Wendet-man-DDD-auf-DDD-an-bleibt-kein-Domain-Driven-Design-uebrig-11102739.html). I do not even limit myself to [OOP modeling](https://docs.scala-lang.org/scala3/book/taste-modeling.html#oop-domain-modeling); I find it perfectly fine to adopt [FP modeling](https://docs.scala-lang.org/scala3/book/domain-modeling-fp.html) and, for example, represent entities (which are conceptually mutable) by [case classes](https://docs.scala-lang.org/scala3/book/domain-modeling-tools.html#case-classes)/[data classes](https://kotlinlang.org/docs/data-classes.html)/[records](https://dev.java/learn/records/) within a request-response cycle.
@@ -112,7 +115,6 @@ package com.squeng.apertizer;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -125,27 +127,36 @@ public class AppConfigSec {
 
         @Bean
         public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-                http.securityMatcher("/**")
-                                .authorizeHttpRequests(authorize -> authorize
-                                                .requestMatchers("/actuator/**")
-                                                .hasRole("ADMIN")
-                                                .requestMatchers("/api/**")
-                                                .hasRole("USER")
-                                                .requestMatchers("/", "/jte/**", "/*.css")
-                                                .permitAll()
-                                                .anyRequest()
-                                                .authenticated())
-                                .headers(headers -> headers
-                                                .contentSecurityPolicy(csp -> csp
-                                                                .policyDirectives(String.join("; ",
-                                                                                "default-src 'none'",
-                                                                                "connect-src 'self'",
-                                                                                "font-src 'self' https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/",
-                                                                                "img-src 'self'",
-                                                                                "script-src 'self' https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/ https://cdn.jsdelivr.net/npm/htmx.org@2.0.8/",
-                                                                                "style-src 'self' https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/ https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/",
-                                                                                "frame-ancestors 'none'"))))
-                                .httpBasic(Customizer.withDefaults());
+                http.authorizeHttpRequests(authorize -> authorize
+                                .requestMatchers("/actuator/**", "/api/poorMansActuator/**")
+                                .hasRole("ADMIN")
+                                .requestMatchers("/apertus/**")
+                                .hasRole("USER")
+                                .requestMatchers("/", "/apple-touch-icon.png", "/favicon.ico", "/favicon.svg", "/*.css")
+                                .permitAll()
+                                .anyRequest()
+                                .authenticated())
+                                .headers(headers -> headers.contentSecurityPolicy(csp -> csp
+                                                .policyDirectives(String.join("; ",
+                                                                "default-src 'none'",
+                                                                "connect-src 'self'",
+                                                                "font-src 'self' https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/",
+                                                                "img-src 'self' data:",
+                                                                "script-src 'self' https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/ https://cdn.jsdelivr.net/npm/htmx.org@2.0.8/",
+                                                                "style-src 'self' 'unsafe-hashes' 'sha256-faU7yAF8NxuMTNEwVmBz+VcYeIoBQ2EMHW3WaVxCvnk=' https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/ https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/",
+                                                                "frame-ancestors 'none'"))))
+                                .sessionManagement(session -> session
+                                                .sessionFixation().newSession())
+                                .formLogin(signIn -> signIn
+                                                .loginPage("/signIn")
+                                                .loginProcessingUrl("/signIn")
+                                                .defaultSuccessUrl("/")
+                                                .permitAll())
+                                .logout(signOut -> signOut
+                                                .logoutUrl("/signOut")
+                                                .logoutSuccessUrl("/signIn?signedOut")
+                                                .invalidateHttpSession(true)
+                                                .permitAll());
                 return http.build();
         }
 }
@@ -292,13 +303,17 @@ trait ForPuttingQuestions:
 ```scala
 package com.squeng.apertizer.operations
 
+import jakarta.annotation.security.RolesAllowed
+
 import com.squeng.apertizer.data.Answer
 import com.squeng.apertizer.data.Question
 import com.squeng.apertizer.driven_ports.ForGettingAnswers
 import com.squeng.apertizer.driving_ports.ForPuttingQuestions
 
 class QandAservice(oracle: ForGettingAnswers) extends ForPuttingQuestions:
+  require(oracle != null, "🐛")
 
+  @RolesAllowed(Array("USER"))
   override def ask(question: Question): Answer =
     oracle.ask(question)
 ```
