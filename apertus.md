@@ -38,12 +38,11 @@ spring.threads.virtual.enabled=true
 
 In order to protect the business logic / domain from the harsh world around it (the Web framework, the DBMS, etc.), I am applying the [Ports & Adapters](https://alistaircockburn.company.site/Epub-Hexagonal-Architecture-Explained-Updated-1st-ed-p751233517) pattern. I could do so within the main project, but I prefer to take advantage of Gradle's support for [multi-project builds](https://docs.gradle.org/current/userguide/multi_project_builds.html) so that Gradle can help enforcing the boundary.
 
-> [!TIP]
-> In my experience, applying the Ports & Adapters pattern is not an option but a necessity. It is not even a trade-off, as it still allows for adopting a [Clean](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) or [Onion](https://jeffreypalermo.com/tag/onion-architecture/) architecture when desired. And while I appreciate the *concepts* of [Domain-Driven Design](https://leanpub.com/ddd-by-example) (DDD) as much as the next guy, I [do not follow them mechanically, let alone slavishly](https://www.heise.de/blog/Wendet-man-DDD-auf-DDD-an-bleibt-kein-Domain-Driven-Design-uebrig-11102739.html). I do not even limit myself to [OOP modeling](https://docs.scala-lang.org/scala3/book/taste-modeling.html#oop-domain-modeling); I find it perfectly fine to adopt [FP modeling](https://docs.scala-lang.org/scala3/book/domain-modeling-fp.html) and, for example, represent entities (which are conceptually mutable) by [case classes](https://docs.scala-lang.org/scala3/book/domain-modeling-tools.html#case-classes)/[data classes](https://kotlinlang.org/docs/data-classes.html)/[records](https://dev.java/learn/records/) within a request-response cycle.
->
-> ![The Insanely Effective Delivery Machine](TIEDM.png)
-> source: [*Domain Modeling Made Functional*](https://pragprog.com/titles/swdddf/domain-modeling-made-functional/)
+In my experience, applying the Ports & Adapters pattern is not an option but a necessity. It is not even a trade-off, as it still allows for adopting a [Clean](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) or [Onion](https://jeffreypalermo.com/tag/onion-architecture/) architecture when desired. And while I appreciate the *concepts* of [Domain-Driven Design](https://leanpub.com/ddd-by-example) (DDD) as much as the next guy, I [do not follow them mechanically, let alone slavishly](https://www.heise.de/blog/Wendet-man-DDD-auf-DDD-an-bleibt-kein-Domain-Driven-Design-uebrig-11102739.html). I do not even limit myself to [OOP modeling](https://docs.scala-lang.org/scala3/book/taste-modeling.html#oop-domain-modeling); I find it perfectly fine to adopt [FP modeling](https://docs.scala-lang.org/scala3/book/domain-modeling-fp.html) and, for example, represent entities (which are conceptually mutable) by [case classes](https://docs.scala-lang.org/scala3/book/domain-modeling-tools.html#case-classes)/[data classes](https://kotlinlang.org/docs/data-classes.html)/[records](https://dev.java/learn/records/) within a request-response cycle.
 
+![The Insanely Effective Delivery Machine](TIEDM.png)
+
+source: [*Domain Modeling Made Functional*](https://pragprog.com/titles/swdddf/domain-modeling-made-functional/)
 
 Furthermore, I want to implement the business logic / domain in Scala, which Gradle supports through its [Scala plugin](https://docs.gradle.org/current/userguide/scala_plugin.html).
 
@@ -96,10 +95,9 @@ dependencies {
     testImplementation("org.scalameta:munit_3:1.2.2")
 }
 ```
-> [!NOTE]
-> Note the dependency on [Jakarta Annotations](https://jakarta.ee/specifications/annotations/). Annotations such as [`RolesAllowed`](https://jakarta.ee/specifications/annotations/3.0/annotations-spec-3.0#jakarta-annotation-security-rolesallowed) allow for framework-independent access-control declarations. Note further that Spring Boot needs to be configured *not* to ignore them (see `AppConfigSec` below).
+Note the dependency on [Jakarta Annotations](https://jakarta.ee/specifications/annotations/). Annotations such as [`RolesAllowed`](https://jakarta.ee/specifications/annotations/3.0/annotations-spec-3.0#jakarta-annotation-security-rolesallowed) allow for framework-independent access-control declarations. Note further that Spring Boot needs to be configured *not* to ignore them (see `AppConfigSec` below).
 
-By the way, MUnit has been chosen as the testing library because it is part of the [Scala Toolkit](https://docs.scala-lang.org/toolkit/introduction.html). (There are viable alternatives [to the Scala Toolkit](https://github.com/com-lihaoyi) in general and [to MUnit](https://scalameta.org/munit/docs/getting-started.html#inspirations) in particular.) More importantly, adhering to the Ports & Adapters pattern makes [testing](https://www.manning.com/books/effective-software-testing) the business logic / domain much easier; we do not require any [mocks/stubs/...](https://www.martinfowler.com/articles/mocksArentStubs.html#TheDifferenceBetweenMocksAndStubs) library to do so.
+By the way, [MUnit](https://scalameta.org/munit/) has been chosen as the testing library because it is part of the [Scala Toolkit](https://docs.scala-lang.org/toolkit/introduction.html). (There are viable alternatives [to the Scala Toolkit](https://github.com/com-lihaoyi) in general and [to MUnit](https://scalameta.org/munit/docs/getting-started.html#inspirations) in particular.) More importantly, adhering to the Ports & Adapters pattern makes testing the business logic / domain much easier; no [mocks/stubs/…](https://www.martinfowler.com/articles/mocksArentStubs.html#TheDifferenceBetweenMocksAndStubs) library is required to create [test doubles](https://www.manning.com/books/effective-software-testing).
 
 ### General Spring Configuration
 
