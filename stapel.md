@@ -10,6 +10,8 @@ description: building the right thing right
 
 👍👍 oder wenigstens 👍:
 
+<!-- March 2026 -->
+- [Von Java zu Kotlin](https://www.hanser-fachbuch.de/fachbuch/artikel/9783446483729)
 <!-- January 2026 -->
 - [Claude Code: The Complete Guide](https://www.linkedin.com/posts/david-ramsey-9b8231108_claudecode-iwroteabook-humblebrag-activity-7368664132440485889-vDlm)
 - [Generative KI mit Python](https://www.rheinwerk-verlag.de/generative-ki-mit-python/)
