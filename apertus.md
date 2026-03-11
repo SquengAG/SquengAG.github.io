@@ -38,7 +38,7 @@ spring.threads.virtual.enabled=true
 
 In order to protect the business logic / domain from the "harsh world" around it (the Web framework, the DBMS, etc.), I am applying the [Ports & Adapters](https://alistaircockburn.company.site/Epub-Hexagonal-Architecture-Explained-Updated-1st-ed-p751233517) pattern. I could do so within the main project, but I prefer to take advantage of Gradle's support for [multi-project builds](https://docs.gradle.org/current/userguide/multi_project_builds.html) so that Gradle can help enforcing the boundary.
 
-In my experience, applying the Ports & Adapters pattern is less of an option and more of a necessity. It is not even a trade-off, as it still allows for adopting a [Clean](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) or [Onion](https://jeffreypalermo.com/tag/onion-architecture/) architecture when desired. And while I appreciate the *concepts* of [Domain-Driven Design](https://leanpub.com/ddd-by-example) (DDD) as much as the next guy, I [do not follow them mechanically, let alone slavishly](https://www.heise.de/blog/Wendet-man-DDD-auf-DDD-an-bleibt-kein-Domain-Driven-Design-uebrig-11102739.html). I do not even limit myself to [OOP modeling](https://docs.scala-lang.org/scala3/book/taste-modeling.html#oop-domain-modeling); I find it perfectly fine to adopt [FP modeling](https://docs.scala-lang.org/scala3/book/domain-modeling-fp.html) and, for example, represent entities (which are conceptually mutable) by [case classes](https://docs.scala-lang.org/scala3/book/domain-modeling-tools.html#case-classes)/[data classes](https://kotlinlang.org/docs/data-classes.html)/[records](https://dev.java/learn/records/) within a request-response cycle.
+In my experience, applying the Ports & Adapters pattern is less of an option and more of a necessity. It is not even a trade-off as it still allows for adopting a [Clean](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) or [Onion](https://jeffreypalermo.com/tag/onion-architecture/) architecture when desired. And while I appreciate the *concepts* of [Domain-Driven Design](https://leanpub.com/ddd-by-example) (DDD) as much as the next guy, I [do not follow them mechanically, let alone slavishly](https://www.heise.de/blog/Wendet-man-DDD-auf-DDD-an-bleibt-kein-Domain-Driven-Design-uebrig-11102739.html). I do not even limit myself to [OOP modeling](https://docs.scala-lang.org/scala3/book/taste-modeling.html#oop-domain-modeling); I find it perfectly fine to adopt [data-oriented programming](https://www.manning.com/books/data-oriented-programming-in-java)/[FP modeling](https://docs.scala-lang.org/scala3/book/domain-modeling-fp.html) and, for example, even go so far as to represent entities (which are conceptually mutable) by [case classes](https://docs.scala-lang.org/scala3/book/domain-modeling-tools.html#case-classes)/[data classes](https://kotlinlang.org/docs/data-classes.html)/[records](https://dev.java/learn/records/) within a request-response cycle.
 
 ![The Insanely Effective Delivery Machine](TIEDM.png)
 
@@ -100,6 +100,20 @@ Note the dependency on [Jakarta Annotations](https://jakarta.ee/specifications/a
 By the way, [MUnit](https://scalameta.org/munit/) has been chosen as the testing library because it is part of the [Scala Toolkit](https://docs.scala-lang.org/toolkit/introduction.html). (There are viable alternatives [to the Scala Toolkit](https://github.com/com-lihaoyi) in general and [to MUnit](https://scalameta.org/munit/docs/getting-started.html#inspirations) in particular.) More importantly, adhering to the Ports & Adapters pattern makes testing the business logic / domain much easier; no [mocks/stubs/…](https://www.martinfowler.com/articles/mocksArentStubs.html#TheDifferenceBetweenMocksAndStubs) library is required to create [test doubles](https://www.manning.com/books/effective-software-testing).
 
 ### General Spring Configuration
+
+#### Profiles
+
+[Profiles](https://docs.spring.io/spring-boot/reference/features/profiles.html) (think DEV, TEST, etc.) are supported out of the box and allow for both [profile-specific configuration files](https://docs.spring.io/spring-boot/reference/features/external-config.html#features.external-config.files.profile-specific) and [configuration classes](https://docs.spring.io/spring-boot/reference/using/configuration-classes.html). In what follows, we are making use of both.
+
+Note that [*"Profiles are not supported in devtools properties/yaml files."*](https://docs.spring.io/spring-boot/reference/using/devtools.html#using.devtools.globalsettings). Therefore, we have to [run our application passing arguments](https://docs.spring.io/spring-boot/gradle-plugin/running.html#running-your-application.passing-arguments) through the Gradle extension …
+
+![Run Task …](RunTask.png)
+
+… and VSC …
+
+![… With Args](WithArgs.png)
+
+… or through the command line: `C:\Users\Paul\Desktop\Apertizer> ./gradlew bootRun --args='--spring.profiles.active=dev'` (Note further that even though the [developer tools](https://docs.spring.io/spring-boot/reference/using/devtools.html#using.devtools.globalsettings) have been included above, I first have to tell Gradle to re-[build continuously](https://docs.gradle.org/current/userguide/incremental_build.html#sec:task_input_output_continuous_build) when any classes have been changed: `C:\Users\Paul\Desktop\Apertizer> ./gradlew -t classes`)
 
 #### Security as a Forethought
 
@@ -170,7 +184,7 @@ Since [*"Spring Boot Starter Security does not activate method-level authorizati
 
 There is no need to decide against request-level authorization when deciding for method-level authorization. We can use the best of [both worlds](https://docs.spring.io/spring-security/reference/servlet/authorization/method-security.html#request-vs-method).
 
-It is tempting to [hiearchically order roles](https://docs.spring.io/spring-security/reference/servlet/authorization/architecture.html#authz-hierarchical-roles) `ADMIN` and `USER`.
+By the way, while it is tempting to [hiearchically order roles](https://docs.spring.io/spring-security/reference/servlet/authorization/architecture.html#authz-hierarchical-roles) `ADMIN` and `USER` …
 
 ```java
         @Bean
@@ -179,7 +193,7 @@ It is tempting to [hiearchically order roles](https://docs.spring.io/spring-secu
         }
 ```
 
-But when you access your production system, you should conciously sign in as either an admin or a user, but not both at the same time.
+… you should conciously (have to) sign in as either an admin or a user when you access your production system.
 
 As is to be expected, the [default security headers](https://docs.spring.io/spring-security/reference/features/exploits/headers.html#headers-default) are a good start. Adding a restrictive [Content Security Policy](https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html) is even better. And remember to regularly check your app with [Mozilla's HTTP Observatory](https://developer.mozilla.org/en-US/observatory).
 
@@ -188,20 +202,6 @@ As is to be expected, the [default security headers](https://docs.spring.io/spri
 Even though [Actuator](https://docs.spring.io/spring-boot/reference/actuator/index.html) provides features for managing and monitoring apps during production, we can take advantage of it as early as during development.
 
 Since the [developer tools](https://docs.spring.io/spring-boot/reference/using/devtools.html#using.devtools.globalsettings) have been included above, (additional) endpoints can be enabled in [`$HOME/.config/spring-boot.spring-boot-devtools.properties`](https://docs.spring.io/spring-boot/reference/using/devtools.html#using.devtools.globalsettings). For example, by enabling the `env` endpoint, we can not only visit `http://localhost:8080/actuator` and `http://localhost:8080/actuator/health` but also `http://localhost:8080/actuator/env`: `management.endpoints.web.exposure.include=env,health`
-
-#### Profiles
-
-[…](https://docs.spring.io/spring-boot/reference/features/external-config.html#features.external-config.files.profile-specific)
-
-Note that [*"Profiles are not supported in devtools properties/yaml files."*](https://docs.spring.io/spring-boot/reference/using/devtools.html#using.devtools.globalsettings)
-
-https://docs.spring.io/spring-boot/gradle-plugin/running.html#running-your-application.passing-arguments
-
-![Run Task …](RunTask.png)
-
-![… With Args](WithArgs.png)
-
-…
 
 #### JTE
 
