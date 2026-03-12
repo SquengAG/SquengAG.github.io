@@ -99,11 +99,9 @@ Note the dependency on [Jakarta Annotations](https://jakarta.ee/specifications/a
 
 By the way, [MUnit](https://scalameta.org/munit/) has been chosen as the testing library because it is part of the [Scala Toolkit](https://docs.scala-lang.org/toolkit/introduction.html). (There are viable alternatives [to the Scala Toolkit](https://github.com/com-lihaoyi) in general and [to MUnit](https://scalameta.org/munit/docs/getting-started.html#inspirations) in particular.) More importantly, adhering to the Ports & Adapters pattern makes testing the business logic / domain much easier; no [mocks/stubs/…](https://www.martinfowler.com/articles/mocksArentStubs.html#TheDifferenceBetweenMocksAndStubs) library is required to create [test doubles](https://www.manning.com/books/effective-software-testing).
 
-### General Spring Configuration
+### Profiles
 
-#### Profiles
-
-[Profiles](https://docs.spring.io/spring-boot/reference/features/profiles.html) (think DEV, TEST, etc.) are supported out of the box and allow for both [profile-specific configuration files](https://docs.spring.io/spring-boot/reference/features/external-config.html#features.external-config.files.profile-specific) and [configuration classes](https://docs.spring.io/spring-boot/reference/using/configuration-classes.html). In what follows, we are making use of both.
+[Profiles](https://docs.spring.io/spring-boot/reference/features/profiles.html) (think DEV, TEST, etc.) are supported out of the box and allow for both [profile-specific configuration files](https://docs.spring.io/spring-boot/reference/features/external-config.html#features.external-config.files.profile-specific) and [configuration classes](https://docs.spring.io/spring-boot/reference/using/configuration-classes.html). In what follows, we are making use of both. As a preparation, create a file `application-dev.properties` within the project folder, alongside the existing `application.properties` file.
 
 Note that [*"Profiles are not supported in devtools properties/yaml files."*](https://docs.spring.io/spring-boot/reference/using/devtools.html#using.devtools.globalsettings). Therefore, we have to [run our application passing arguments](https://docs.spring.io/spring-boot/gradle-plugin/running.html#running-your-application.passing-arguments) through the Gradle extension …
 
@@ -114,6 +112,8 @@ Note that [*"Profiles are not supported in devtools properties/yaml files."*](ht
 ![… With Args](WithArgs.png)
 
 … or through the command line: `C:\Users\Paul\Desktop\Apertizer> ./gradlew bootRun --args='--spring.profiles.active=dev'` (Note further that even though the [developer tools](https://docs.spring.io/spring-boot/reference/using/devtools.html#using.devtools.globalsettings) have been included above, I first have to tell Gradle to re-[build continuously](https://docs.gradle.org/current/userguide/incremental_build.html#sec:task_input_output_continuous_build) when any classes have been changed: `C:\Users\Paul\Desktop\Apertizer> ./gradlew -t classes`)
+
+### General Spring Configuration
 
 #### Security as a Forethought
 
@@ -180,6 +180,8 @@ public class AppConfigSec {
 }
 ```
 
+(The three images in line `.requestMatchers("/", "/apple-touch-icon.png", "/favicon.ico", "/favicon.svg", "/*.css")` have been created with [RealFaviconGenerator](https://realfavicongenerator.net/) and added to `src/main/resources/static`.)
+
 Since [*"Spring Boot Starter Security does not activate method-level authorization by default"*](https://docs.spring.io/spring-security/reference/servlet/authorization/method-security.html), we activate it with `@EnableMethodSecurity`. However, if we are serious about keeping the business logic / domain independent of Spring, we must not annotate its methods with Spring-specific annotations, which is why we [allow for using JSR-250 annotations](https://docs.spring.io/spring-security/reference/servlet/authorization/method-security.html#use-jsr250).
 
 There is no need to decide against request-level authorization when deciding for method-level authorization. We can use the best of [both worlds](https://docs.spring.io/spring-security/reference/servlet/authorization/method-security.html#request-vs-method).
@@ -205,12 +207,74 @@ Since the [developer tools](https://docs.spring.io/spring-boot/reference/using/d
 
 #### JTE
 
-Disable [development mode](https://jte.gg/spring-boot-starter-3/#development) in `application.properties` by setting `gg.jte.development-mode` to `false`, but add `gg.jte.development-mode=false` to `application-dev.properties`. Furthermore, [precompile the templates for production](https://jte.gg/spring-boot-starter-3/#production) by adding `gg.jte.usePrecompiledTemplates=true` to `application.properties`.
-…
+Disable [development mode](https://jte.gg/spring-boot-starter-3/#development) in `application.properties` by setting `gg.jte.development-mode` to `false`, but add `gg.jte.development-mode=true` to `application-dev.properties`. Furthermore, [precompile the templates for production](https://jte.gg/spring-boot-starter-3/#production) by adding `gg.jte.usePrecompiledTemplates=true` to `application.properties`, but add `gg.jte.usePrecompiledTemplates=false` to `application-dev.properties`.
 
 ##### i18n / l10n
 
+Spring Boot and JTE support [Internationalization](https://docs.spring.io/spring-boot/reference/features/internationalization.html) (i18n) and [localization](https://jte.gg/localization/) out of the box, but need some minor bridging.
 
+First, however, let us prepare the l10n files:
+
+- within folder `src/main/resources`, create a folder `lang`
+- within folder `lang`, create file `messages.properties` for the default language and further files for further languages (e.g., `messages_de.propertes` for German)
+
+The following `JteLocalizer` class is the bridge between Spring Boot's `MessageSource` and JTE's `LocalizationSupport`:
+
+```java
+package com.squeng.apertizer.gui;
+
+import org.springframework.context.MessageSource;
+import org.springframework.context.i18n.LocaleContextHolder;
+
+import gg.jte.support.LocalizationSupport;
+
+public class JteLocalizer implements LocalizationSupport {
+
+    private final MessageSource messageSource;
+
+    public JteLocalizer(MessageSource messageSource) {
+        this.messageSource = messageSource;
+    }
+
+    @Override
+    public String lookup(String key) {
+        return messageSource.getMessage(key, null, LocaleContextHolder.getLocale());
+    }
+}
+```
+
+To make an instance available to all JTE templates without having to add it to the UI model in every controller method, we can add it to the UI model through a `ControllerAdvice`:
+
+```java
+package com.squeng.apertizer.gui;
+
+import org.springframework.security.web.csrf.CsrfToken;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ModelAttribute;
+
+@ControllerAdvice(basePackages = "com.squeng.apertizer.gui")
+public class JteControllerAdvice {
+
+    private final JteLocalizer jteLocalizer;
+
+    public JteControllerAdvice(JteLocalizer jteLocalizer) {
+        this.jteLocalizer = jteLocalizer;
+    }
+
+    @ModelAttribute
+    public void csrf(Model model, CsrfToken token) {
+        model.addAttribute("csrfToken", token);
+    }
+
+    @ModelAttribute
+    public void l10n(Model model) {
+        model.addAttribute("localizer", jteLocalizer);
+    }
+}
+```
+
+…
 
 ### Spring AI Configuration
 
