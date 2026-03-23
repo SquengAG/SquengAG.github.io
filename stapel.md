@@ -11,6 +11,7 @@ description: building the right thing right
 👍👍 oder wenigstens 👍:
 
 <!-- March 2026 -->
+- [Finanzielles Rechnungswesen in der Schweiz](https://shop.kohlhammer.de/finanzielles-rechnungswesen-in-der-schweiz-39945.html)
 - [Von Java zu Kotlin](https://www.hanser-fachbuch.de/fachbuch/artikel/9783446483729)
 <!-- January 2026 -->
 - [Claude Code: The Complete Guide](https://www.linkedin.com/posts/david-ramsey-9b8231108_claudecode-iwroteabook-humblebrag-activity-7368664132440485889-vDlm)
