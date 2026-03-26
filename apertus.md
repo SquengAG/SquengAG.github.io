@@ -10,7 +10,7 @@ description: building the right thing right
 
 Via [Public AI](https://publicai.co/), [Spring AI](https://spring.io/projects/spring-ai) can use [Apertus](https://www.swiss-ai.org/apertus) with little effort. This guide shows how.
 
-To follow along, you need to be familiar with [Spring](https://spring.io/) ([Boot](https://spring.io/projects/spring-boot)) in general and Spring AI in particular. If that is not the case yet, check out [Spring in Action](https://www.manning.com/books/spring-in-action-sixth-edition) and [Spring AI in Action](https://www.manning.com/books/spring-ai-in-action), respectively.
+To follow along, you need to be familiar with [Spring](https://spring.io/) ([Boot](https://spring.io/projects/spring-boot)) in general and Spring AI in particular. If that is not the case yet, check out [*Spring in Action*](https://www.manning.com/books/spring-in-action-sixth-edition) and [*Spring AI in Action*](https://www.manning.com/books/spring-ai-in-action), respectively.
 
 If you already know how to [create projects](#create-project) [cleanly](#create-subproject) and how to configure them properly, you can skip ahead to [the AI section](#spring-ai-configuration).
 
@@ -36,9 +36,9 @@ spring.threads.virtual.enabled=true
 
 #### Create Subproject
 
-In order to protect the business logic / domain from the "harsh world" around it (the Web framework, the DBMS, etc.), I am applying the [Ports & Adapters](https://alistaircockburn.company.site/Epub-Hexagonal-Architecture-Explained-Updated-1st-ed-p751233517) pattern. I could do so within the main project, but I prefer to take advantage of Gradle's support for [multi-project builds](https://docs.gradle.org/current/userguide/multi_project_builds.html) so that Gradle can help enforcing the boundary.
+In order to protect the business logic / domain from the "harsh world" around it (the Web framework, the DBMS, etc.), I am applying the [Ports & Adapters](https://alistaircockburn.company.site/Epub-Hexagonal-Architecture-Explained-Updated-1st-ed-p751233517) pattern. I could do so within the main project (e.g., enforced by [ArchUnit](https://www.archunit.org/) as explained in [*Get Your Hands Dirty on Clean Architecture*](https://leanpub.com/get-your-hands-dirty-on-clean-architecture) or by [Spring Modulith](https://spring.io/projects/spring-modulith)), but I prefer to take advantage of Gradle's support for [multi-project builds](https://docs.gradle.org/current/userguide/multi_project_builds.html) so that Gradle can help enforcing the boundary.
 
-In my experience, applying the Ports & Adapters pattern is less of an option and more of a necessity. It is not even a trade-off as it still allows for adopting a [Clean](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) or [Onion](https://jeffreypalermo.com/tag/onion-architecture/) architecture when desired. And while I appreciate the *concepts* of [Domain-Driven Design](https://leanpub.com/ddd-by-example) (DDD) as much as the next guy, I [do not follow them mechanically, let alone slavishly](https://www.heise.de/blog/Wendet-man-DDD-auf-DDD-an-bleibt-kein-Domain-Driven-Design-uebrig-11102739.html). I do not even limit myself to [OOP modeling](https://docs.scala-lang.org/scala3/book/taste-modeling.html#oop-domain-modeling); I find it perfectly fine to adopt [data-oriented programming](https://www.manning.com/books/data-oriented-programming-in-java)/[FP modeling](https://docs.scala-lang.org/scala3/book/domain-modeling-fp.html) and, for example, even go so far as to represent entities (which are conceptually mutable) by [case classes](https://docs.scala-lang.org/scala3/book/domain-modeling-tools.html#case-classes)/[data classes](https://kotlinlang.org/docs/data-classes.html)/[records](https://dev.java/learn/records/) within a request-response cycle.
+In my experience, applying the Ports & Adapters pattern is less of an option and more of a necessity. It is not even a trade-off as it still allows for adopting a [Clean](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html) or [Onion](https://jeffreypalermo.com/tag/onion-architecture/) architecture when desired. And while I appreciate the *concepts* of [Domain-Driven Design](https://leanpub.com/ddd-by-example) (DDD) as much as the next guy, I [do not follow them mechanically, let alone slavishly](https://www.heise.de/blog/Wendet-man-DDD-auf-DDD-an-bleibt-kein-Domain-Driven-Design-uebrig-11102739.html). I do not even limit myself to [OOP modeling](https://docs.scala-lang.org/scala3/book/taste-modeling.html#oop-domain-modeling); I find it perfectly fine to adopt [data-oriented programming](https://www.manning.com/books/data-oriented-programming-in-java) / [FP modeling](https://docs.scala-lang.org/scala3/book/domain-modeling-fp.html) and, for example, even go so far as to represent entities (which are conceptually mutable) by [case classes](https://docs.scala-lang.org/scala3/book/domain-modeling-tools.html#case-classes) / [data classes](https://kotlinlang.org/docs/data-classes.html) / [records](https://dev.java/learn/records/) within a request-response cycle.
 
 ![The Insanely Effective Delivery Machine](TIEDM.png)
 
@@ -97,7 +97,9 @@ dependencies {
 ```
 Note the dependency on [Jakarta Annotations](https://jakarta.ee/specifications/annotations/). Annotations such as [`RolesAllowed`](https://jakarta.ee/specifications/annotations/3.0/annotations-spec-3.0#jakarta-annotation-security-rolesallowed) allow for framework-independent access-control declarations. Note further that Spring Boot needs to be configured *not* to ignore them (see `AppConfigSec` below).
 
-By the way, [MUnit](https://scalameta.org/munit/) has been chosen as the testing library because it is part of the [Scala Toolkit](https://docs.scala-lang.org/toolkit/introduction.html). (There are viable alternatives [to the Scala Toolkit](https://github.com/com-lihaoyi) in general and [to MUnit](https://scalameta.org/munit/docs/getting-started.html#inspirations) in particular.) More importantly, adhering to the Ports & Adapters pattern makes testing the business logic / domain much easier; no [mocks/stubs/…](https://www.martinfowler.com/articles/mocksArentStubs.html#TheDifferenceBetweenMocksAndStubs) library is required to create [test doubles](https://www.manning.com/books/effective-software-testing).
+At this point, however, one does not have worry about Spring yet. While this guide continues with [preparing profiles](#profiles) and [configuring Spring](#general-spring-configuration), one could focus on the [business logic / domain](#business-logic--domain) first. The subproject has everything one needs to implement and test the business logic / domain.
+
+Speaking of testing, [MUnit](https://scalameta.org/munit/) has been chosen as the testing library because it is part of the [Scala Toolkit](https://docs.scala-lang.org/toolkit/introduction.html). (There are viable alternatives [to the Scala Toolkit](https://github.com/com-lihaoyi) in general and [to MUnit](https://scalameta.org/munit/docs/getting-started.html#inspirations) in particular.) More importantly, adhering to the Ports & Adapters pattern makes testing the business logic / domain much easier; no [mocks/stubs/…](https://www.martinfowler.com/articles/mocksArentStubs.html#TheDifferenceBetweenMocksAndStubs) library is required to create [test doubles](https://www.manning.com/books/effective-software-testing).
 
 ### Profiles
 
@@ -334,7 +336,11 @@ From here on, you could try the [many third-party examples](https://github.com/s
 
 #### Business Logic / Domain
 
+Again, this section could have immediately followed [creating the subproject](#create-subproject) even though this guide follows the latter with [preparing profiles](#profiles) and [configuring Spring](#general-spring-configuration).
+
 ![Q&A Domain](QandAdomain.png)
+
+The example domain is conciously kept simple and rather reflects [FP domain modeling](https://docs.scala-lang.org/scala3/book/taste-modeling.html#fp-domain-modeling) than [OOP domain modeling](https://docs.scala-lang.org/scala3/book/taste-modeling.html#oop-domain-modeling) in general and [DDD](https://www.domainlanguage.com/ddd/) in particular.
 
 ```scala
 package com.squeng.apertizer.data
@@ -347,6 +353,8 @@ package com.squeng.apertizer.data
 
 final case class Question(q: String)
 ```
+
+The ports demarcate the border of the hexagon, with the driving port(s) being implemented within the hexagon and the driven port(s) outwith.
 
 ```scala
 package com.squeng.apertizer.driven_ports
@@ -384,6 +392,43 @@ class QandAservice(oracle: ForGettingAnswers) extends ForPuttingQuestions:
   @RolesAllowed(Array("USER"))
   override def ask(question: Question): Answer =
     oracle.ask(question)
+```
+
+For testing puroposes, however, we also provide an implementation of the driven port within the hexagon …
+
+```scala
+package com.squeng.apertizer.driven_ports
+
+import com.squeng.apertizer.data.Answer
+
+import com.squeng.apertizer.data.Question
+
+object DeepThought extends ForGettingAnswers:
+  override def ask(question: Question): Answer = Answer(42.toString)
+```
+
+… and simply inject it "by hand".
+
+```scala
+package com.squeng.apertizer.operations
+
+import com.squeng.apertizer.data.Question
+import com.squeng.apertizer.data.Answer
+import com.squeng.apertizer.driven_ports.DeepThought
+import com.squeng.apertizer.operations.QandAservice
+import com.squeng.apertizer.driven_ports.DeepThought
+
+class QandAserviceTest extends munit.FunSuite:
+  test("instatiate QandAservice without any driven port") {
+    intercept[IllegalArgumentException] {
+      val corruptService = QandAservice(null)
+    }
+  }
+
+  test("have QandAservice defer to a driven port") {
+    val answer = QandAservice(DeepThought).ask(Question("🤔"))
+    assertEquals(answer, Answer(42.toString))
+  }
 ```
 
 #### Spring
