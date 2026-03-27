@@ -2,3 +2,5 @@ theme: jekyll-theme-cayman
 
 title: Squeng AG
 description: Squeng AG's abode
+
+include: [".well-known"]
