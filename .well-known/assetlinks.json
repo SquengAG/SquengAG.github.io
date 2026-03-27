@@ -1,0 +1,14 @@
+[
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "com.deposplit",
+            "sha256_cert_fingerprints": [
+                "64:BF:B6:28:AC:59:9A:4D:99:86:81:45:6A:7E:11:81:57:FE:42:D7:46:1B:EE:97:98:BA:26:B3:5C:0C:BE:ED"
+            ]
+        }
+    }
+]
