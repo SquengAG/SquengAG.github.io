@@ -10,6 +10,8 @@ description: building the right thing right
 
 👍👍 oder wenigstens 👍:
 
+<!-- April 2026 -->
+- [Rewiring Democracy](https://www.schneier.com/books/rewiring-democracy/)
 <!-- March 2026 -->
 - [Finanzielles Rechnungswesen in der Schweiz](https://shop.kohlhammer.de/finanzielles-rechnungswesen-in-der-schweiz-39945.html)
 - [Von Java zu Kotlin](https://www.hanser-fachbuch.de/fachbuch/artikel/9783446483729)
