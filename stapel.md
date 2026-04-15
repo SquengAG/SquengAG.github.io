@@ -11,6 +11,7 @@ description: building the right thing right
 👍👍 oder wenigstens 👍:
 
 <!-- April 2026 -->
+- [Data-Oriented Programming in Java](https://www.manning.com/books/data-oriented-programming-in-java)
 - [Rewiring Democracy](https://www.schneier.com/books/rewiring-democracy/)
 <!-- March 2026 -->
 - [Finanzielles Rechnungswesen in der Schweiz](https://shop.kohlhammer.de/finanzielles-rechnungswesen-in-der-schweiz-39945.html)
