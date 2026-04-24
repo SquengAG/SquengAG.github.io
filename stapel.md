@@ -11,6 +11,7 @@ description: building the right thing right
 👍👍 oder wenigstens 👍:
 
 <!-- April 2026 -->
+- [Maths For Computing](https://link.springer.com/book/10.1007/978-3-031-69234-5)
 - [Data-Oriented Programming in Java](https://www.manning.com/books/data-oriented-programming-in-java)
 - [Rewiring Democracy](https://www.schneier.com/books/rewiring-democracy/)
 <!-- March 2026 -->
