@@ -10,6 +10,8 @@ description: building the right thing right
 
 👍👍 oder wenigstens 👍:
 
+<!-- May 2026 -->
+- [Agentic Coding with Claude Code](https://www.packtpub.com/en-ch/product/agentic-coding-with-claude-code-9781806022588)
 <!-- April 2026 -->
 - [Maths For Computing](https://link.springer.com/book/10.1007/978-3-031-69234-5)
 - [Data-Oriented Programming in Java](https://www.manning.com/books/data-oriented-programming-in-java)
