@@ -10,6 +10,8 @@ description: building the right thing right
 
 👍👍 oder wenigstens 👍:
 
+<!-- June 2026 -->
+- [The Agentic AI Book](https://book.ryanrad.org/)
 <!-- May 2026 -->
 - [Agentic Coding with Claude Code](https://www.packtpub.com/en-ch/product/agentic-coding-with-claude-code-9781806022588)
 <!-- April 2026 -->
