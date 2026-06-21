@@ -11,6 +11,7 @@ description: building the right thing right
 👍👍 oder wenigstens 👍:
 
 <!-- June 2026 -->
+- [Java Web Internals](https://www.packtpub.com/en-ch/product/java-web-internals-9781835881491)
 - [The Agentic AI Book](https://book.ryanrad.org/)
 <!-- May 2026 -->
 - [Agentic Coding with Claude Code](https://www.packtpub.com/en-ch/product/agentic-coding-with-claude-code-9781806022588)

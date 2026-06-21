@@ -20,8 +20,6 @@ There are various ways to create a Spring Boot project. My preferred way is to u
 
 ![Basics](SIleft.png)
 
-(At the time of this writing, Kotlin does not support Java 25 yet, which is why Java 21 is selected instead.)
-
 Even though Spring AI does not explicitly support Apertus and/or Public AI, we do not have to extend Spring's [AI Model API](https://docs.spring.io/spring-ai/reference/api/index.html#_ai_model_api) as [Wells points out in the *OpenAI compatibility* box on page 13](https://www.manning.com/books/spring-ai-in-action):
 
 > *"Although most AI service providers have their own proprietary APIs, many offer OpenAI-compatible APIs either as their own API or as an alternative to their API. AI service providers such as Groq (https://groq.com/) and Google Gemini, tools such as vLLM (https://docs.vllm.ai/) and LiteLLM (https://www.litellm.ai/), and even Ollama offer APIs that are mostly compatible with OpenAI’s API. You can use Spring AI’s OpenAI starter to integrate with these APIs in the same way you would with OpenAI itself."*
