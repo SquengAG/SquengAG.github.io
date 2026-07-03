@@ -11,6 +11,7 @@ description: building the right thing right
 👍👍 oder wenigstens 👍:
 
 <!-- July 2026 -->
+- [(Operation) Sandworm](https://andygreenberg.net/books)
 - [Building Intelligent Applications with Spring AI](https://www.packtpub.com/en-ch/product/building-intelligent-applications-with-spring-ai-9781836204602)
 <!-- June 2026 -->
 - [Java Web Internals](https://www.packtpub.com/en-ch/product/java-web-internals-9781835881491)
