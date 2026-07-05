@@ -11,6 +11,7 @@ description: building the right thing right
 👍👍 oder wenigstens 👍:
 
 <!-- July 2026 -->
+- [Das Swift-Handbuch](https://www.hanser-fachbuch.de/Das-Swift-Handbuch/978-3-446-48502-0)
 - [(Operation) Sandworm](https://andygreenberg.net/books)
 - [Building Intelligent Applications with Spring AI](https://www.packtpub.com/en-ch/product/building-intelligent-applications-with-spring-ai-9781836204602)
 <!-- June 2026 -->

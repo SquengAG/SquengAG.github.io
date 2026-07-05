@@ -283,10 +283,10 @@ The switch from Open AI to Public AI with one of the two Apertus models is made 
 ```
 spring.ai.openai.api-key=${PUBLIC_AI_API_KEY}
 # spring.ai.openai.api-key for DEV is set in $HOME\.config\spring-boot-devtools.properties
-spring.ai.openai.base-url=https://api.publicai.co
-# spring.ai.openai.chat.base-url=https://api.publicai.co
-spring.ai.openai.chat.options.model=swiss-ai/apertus-8b-instruct
-# spring.ai.openai.chat.options.model=swiss-ai/apertus-70b-instruct
+spring.ai.openai.base-url=https://api.publicai.co/v1
+# spring.ai.openai.chat.base-url=https://api.publicai.co/v1
+spring.ai.openai.chat.model=swiss-ai/apertus-8b-instruct
+# spring.ai.openai.chat.model=swiss-ai/apertus-70b-instruct
 ```
 
 The [production API key]((https://platform.publicai.co/settings/api-keys)) will have to be configured through an environment variable. But since the [developer tools](https://docs.spring.io/spring-boot/reference/using/devtools.html#using.devtools.globalsettings) have been included above, the [development API key]((https://platform.publicai.co/settings/api-keys)) can be added to [`$HOME/.config/spring-boot.spring-boot-devtools.properties`](https://docs.spring.io/spring-boot/reference/using/devtools.html#using.devtools.globalsettings) and is picked up in [the usual order](https://docs.spring.io/spring-boot/reference/features/external-config.html).
@@ -437,28 +437,32 @@ class QandAserviceTest extends munit.FunSuite:
 package com.squeng.apertizer.ai;
 
 import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.ai.openai.OpenAiChatOptions;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import com.squeng.apertizer.data.Answer;
 import com.squeng.apertizer.data.Question;
 import com.squeng.apertizer.driven_ports.ForGettingAnswers;
+import com.squeng.apertizer.session.UserSession;
 
 @Component
 @Primary
 public class KnowItAll implements ForGettingAnswers {
 
     private final ChatClient chatClient;
+    private final UserSession userSession;
 
-    public KnowItAll(ChatClient.Builder chatClientBuilder) {
+    public KnowItAll(ChatClient.Builder chatClientBuilder, UserSession userSession) {
         this.chatClient = chatClientBuilder.build();
+        this.userSession = userSession;
     }
 
     @Override
     public Answer ask(Question question) {
         return Answer.apply(chatClient.prompt()
                 .user(question.q())
+                .options(OpenAiChatOptions.builder().model(userSession.getApertus().getChatOptionsModel()))
                 .call()
                 .content());
     }
