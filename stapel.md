@@ -11,6 +11,7 @@ description: building the right thing right
 👍👍 oder wenigstens 👍:
 
 <!-- July 2026 -->
+- [Build Your Own Coding Agent](https://leanpub.com/build-your-own-coding-agent)
 - [Das Swift-Handbuch](https://www.hanser-fachbuch.de/Das-Swift-Handbuch/978-3-446-48502-0)
 - [(Operation) Sandworm](https://andygreenberg.net/books)
 - [Building Intelligent Applications with Spring AI](https://www.packtpub.com/en-ch/product/building-intelligent-applications-with-spring-ai-9781836204602)

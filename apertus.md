@@ -56,7 +56,7 @@ Prepare the configuration:
 - within the existing `build.gradle.kts` file, add the subproject as well as the [Scala library](https://mvnrepository.com/artifact/org.scala-lang/scala3-library) as dependencies:
 
 ```
-extra["scalaVersion"] = "3.3.7"
+extra["scalaVersion"] = "3.3.8"
 extra["springAiVersion"] = "2.0.0-M2"
 
 dependencies {
@@ -85,7 +85,7 @@ repositories {
 }
 
 scala {
-    scalaVersion = "3.3.7"
+    scalaVersion = "3.3.8"
 }
 
 dependencies {
