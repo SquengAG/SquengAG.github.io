@@ -11,6 +11,7 @@ description: building the right thing right
 👍👍 oder wenigstens 👍:
 
 <!-- July 2026 -->
+- [Inside the Box](https://davidepstein.com/inside-the-box/)
 - [Build Your Own Coding Agent](https://leanpub.com/build-your-own-coding-agent)
 - [Das Swift-Handbuch](https://www.hanser-fachbuch.de/Das-Swift-Handbuch/978-3-446-48502-0)
 - [(Operation) Sandworm](https://andygreenberg.net/books)
