@@ -11,6 +11,7 @@ description: building the right thing right
 👍👍 oder wenigstens 👍:
 
 <!-- August 2026 -->
+- [Disciplined Entrepreneurship](https://www.d-eship.com/books/)
 - [The Finance Book](https://www.pearson.com/en-gb/subject-catalog/p/finance-book-the/P200000007255/9781292401980)
 <!-- July 2026 -->
 - [Inside the Box](https://davidepstein.com/inside-the-box/)
