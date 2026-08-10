@@ -10,6 +10,8 @@ description: building the right thing right
 
 👍👍 oder wenigstens 👍:
 
+<!-- August 2026 -->
+- [The Finance Book](https://www.pearson.com/en-gb/subject-catalog/p/finance-book-the/P200000007255/9781292401980)
 <!-- July 2026 -->
 - [Inside the Box](https://davidepstein.com/inside-the-box/)
 - [Build Your Own Coding Agent](https://leanpub.com/build-your-own-coding-agent)
