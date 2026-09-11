@@ -11,6 +11,7 @@ description: building the right thing right
 👍👍 oder wenigstens 👍:
 
 <!-- September 2026 -->
+- [Careless People](https://us.macmillan.com/books/9781250391230/carelesspeople/)
 - [Kotlin Essentials](https://leanpub.com/kotlin_developers)
 <!-- August 2026 -->
 - [No Fluff Product Management](https://www.linkedin.com/posts/roi-lavan_dan-barak-and-i-have-been-working-on-a-product-activity-7473043090086412289-ysQB)
