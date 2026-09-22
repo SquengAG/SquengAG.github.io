@@ -11,6 +11,7 @@ description: building the right thing right
 👍👍 oder wenigstens 👍:
 
 <!-- September 2026 -->
+- [This is for Everyone](https://us.macmillan.com/books/9780374612467/thisisforeveryone/)
 - [Careless People](https://us.macmillan.com/books/9781250391230/carelesspeople/)
 - [Kotlin Essentials](https://leanpub.com/kotlin_developers)
 <!-- August 2026 -->
