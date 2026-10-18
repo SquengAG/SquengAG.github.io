@@ -10,6 +10,8 @@ description: building the right thing right
 
 👍👍 oder wenigstens 👍:
 
+<!-- October 2026 -->
+- [Fall in Love with the Problem, not the Solution](https://urilevine.com/book/)
 <!-- September 2026 -->
 - [This is for Everyone](https://us.macmillan.com/books/9780374612467/thisisforeveryone/)
 - [Careless People](https://us.macmillan.com/books/9781250391230/carelesspeople/)
