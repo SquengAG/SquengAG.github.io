@@ -10,6 +10,8 @@ description: building the right thing right
 
 👍👍 oder wenigstens 👍:
 
+<!-- November 2026 -->
+- [Android Programming for Beginners](https://www.packtpub.com/en-ch/product/android-programming-for-beginners-9781806698424)
 <!-- October 2026 -->
 - [Fall in Love with the Problem, not the Solution](https://urilevine.com/book/)
 <!-- September 2026 -->
